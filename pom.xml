@@ -88,10 +88,11 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Oiyokan Core Library -->
 		<dependency>
 			<groupId>jp.oiyokan</groupId>
 			<artifactId>oiyokan</artifactId>
-			<version>1.5.20210420</version>
+			<version>1.6.20210422</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
