@@ -30,6 +30,8 @@ import jp.oiyokan.dto.OiyoSettingsDatabase;
  * テスト用の内部データベースを作成します。この内部データベースは動作の上で必要です。
  */
 class Build32MySQLTest {
+    private static final boolean IS_RUN_THISMETHOD = false;
+
     private static final String[] DROP_TABLE_SQLS = new String[] { //
             "DROP TABLE ODataTest1", //
             "DROP TABLE ODataTest2", //
@@ -42,7 +44,6 @@ class Build32MySQLTest {
 
     @Test
     void test01() throws Exception {
-        final boolean IS_RUN_THISMETHOD = false;
         if (!IS_RUN_THISMETHOD)
             return;
 
