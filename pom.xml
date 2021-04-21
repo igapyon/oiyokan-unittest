@@ -90,9 +90,9 @@
 
 		<dependency>
 			<groupId>jp.oiyokan</groupId>
-		<artifactId>oiyokan</artifactId>
-		<version>1.5.20210420</version>
-	</dependency>
+			<artifactId>oiyokan</artifactId>
+			<version>1.5.20210420</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
