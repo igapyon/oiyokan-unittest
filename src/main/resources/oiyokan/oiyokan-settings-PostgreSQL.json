@@ -3,15 +3,6 @@
   "containerName": "Container",
   "database": [
     {
-      "name": "oiyokanKan",
-      "type": "h2",
-      "description": "Oiyokan internal DB. Do not change.",
-      "jdbcDriver": "org.h2.Driver",
-      "jdbcUrl": "jdbc:h2:mem:oiyokan;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=FALSE;MODE=MSSQLServer",
-      "jdbcUser": "sa",
-      "jdbcPass": ""
-    },
-    {
       "name": "oiyoUnitTestDb",
       "type": "h2",
       "description": "Oiyokan internal Target Test DB. Used for build unit test.",
@@ -67,45 +58,6 @@
     }
   ],
   "entitySet": [
-    {
-      "name": "Oiyokans",
-      "description": "Oiyokan internal info. Do not change.",
-      "dbSettingName": "oiyokanKan",
-      "canCreate": false,
-      "canRead": true,
-      "canUpdate": false,
-      "canDelete": false,
-      "omitCountAll": true,
-      "entityType": {
-        "name": "Oiyokan",
-        "dbName": "Oiyokan",
-        "keyName": ["KeyName"],
-        "property": [
-          {
-            "name": "KeyName",
-            "dbName": "KeyName",
-            "edmType": "Edm.String",
-            "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
-            "jdbcSetMethod": "setString",
-            "nullable": false,
-            "maxLength": 20,
-            "lengthFixed": false
-          },
-          {
-            "name": "KeyValue",
-            "dbName": "KeyValue",
-            "edmType": "Edm.String",
-            "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
-            "jdbcSetMethod": "setString",
-            "nullable": true,
-            "maxLength": 255,
-            "lengthFixed": false
-          }
-        ]
-      }
-    },
     {
       "name": "ODataTests1",
       "description": "Description.",

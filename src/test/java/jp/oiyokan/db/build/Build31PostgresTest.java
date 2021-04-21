@@ -32,6 +32,8 @@ import jp.oiyokan.dto.OiyoSettingsDatabase;
  * Postgres での単体テスト実施時に利用します。
  */
 class Build31PostgresTest {
+    private static final boolean IS_RUN_THISMETHOD = false;
+
     private static final String[] DROP_TABLE_SQLS = new String[] { //
             "DROP TABLE ODataTest1", //
             "DROP TABLE ODataTest2", //
@@ -44,7 +46,6 @@ class Build31PostgresTest {
 
     @Test
     void test01() throws Exception {
-        final boolean IS_RUN_THISMETHOD = false;
         if (!IS_RUN_THISMETHOD)
             return;
 
@@ -63,7 +64,7 @@ class Build31PostgresTest {
             }
 
             String[] sqls = OiyokanResourceSqlUtil
-                    .loadOiyokanResourceSql("oiyokan/sql/" + "oiyokan-test-db-postgres.sql");
+                    .loadOiyokanResourceSql("oiyokan/sql/" + "oiyokan-test-db-PostgreSQL.sql");
             for (String sql : sqls) {
                 if (sql.trim().length() == 0) {
                     continue;
