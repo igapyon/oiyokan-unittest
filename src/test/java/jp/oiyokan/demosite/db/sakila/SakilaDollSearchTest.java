@@ -24,7 +24,7 @@ import jp.app.ctrl.ThSakilaCtrl;
 import jp.oiyokan.OiyokanConstants;
 import jp.oiyokan.OiyokanTestSettingConstants;
 import jp.oiyokan.common.OiyoUrlUtil;
-import jp.oiyokan.demosite.util.OiyokanTestUtil;
+import jp.oiyokan.util.OiyokanTestUtil;
 
 /**
  * OData サーバについて、おおざっぱな通過によるデグレードを検知.

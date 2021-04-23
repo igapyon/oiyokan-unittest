@@ -22,7 +22,7 @@ import org.junit.jupiter.api.Test;
 
 import jp.oiyokan.OiyokanTestSettingConstants;
 import jp.oiyokan.common.OiyoUrlUtil;
-import jp.oiyokan.demosite.util.OiyokanTestUtil;
+import jp.oiyokan.util.OiyokanTestUtil;
 
 /**
  * 実際に発生した事象のテストケース.

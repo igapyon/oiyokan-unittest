@@ -22,7 +22,7 @@ import org.junit.jupiter.api.Test;
 
 import jp.oiyokan.OiyokanTestSettingConstants;
 import jp.oiyokan.common.OiyoUrlUtil;
-import jp.oiyokan.demosite.util.OiyokanTestUtil;
+import jp.oiyokan.util.OiyokanTestUtil;
 
 /**
  * OData サーバについて、おおざっぱな通過によるデグレードを検知.
