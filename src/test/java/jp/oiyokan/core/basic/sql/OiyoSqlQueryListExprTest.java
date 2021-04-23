@@ -105,7 +105,13 @@ class OiyoSqlQueryListExprTest {
             assertEquals("((STRPOS(Description,?) - 1) <> -1)", getExprString("/ODataTests1", //
                     OiyoUrlUtil.encodeUrlQuery(
                             "$top=51&$filter= indexof(Description,'増殖タブレット7') ne -1 &$orderby=ID &$count=true &$select=Description,ID,Name")),
-                    "ORCL18の場合、命令の差異、大文字小文字の差異が出る");
+                    "postgres");
+            break;
+        case SQLSV2008:
+            assertEquals("((CHARINDEX(?,Description) - 1) <> -1)", getExprString("/ODataTests1", //
+                    OiyoUrlUtil.encodeUrlQuery(
+                            "$top=51&$filter= indexof(Description,'増殖タブレット7') ne -1 &$orderby=ID &$count=true &$select=Description,ID,Name")),
+                    "SQLSV2008");
             break;
         }
     }
