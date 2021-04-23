@@ -44,6 +44,7 @@ import jp.oiyokan.oiyogen.OiyokanSettingsGenUtil;
  */
 class Gen11OiyokanSakilaSettingsJsonTest {
     private static final String TARGET_UNITTEST_DATABASE = "oiyoUnitTestDb";
+   // private static final String TARGET_UNITTEST_DATABASE = "postgres1";
 
     @Test
     void test01() throws Exception {
@@ -122,32 +123,6 @@ class Gen11OiyokanSakilaSettingsJsonTest {
                     entitySet.setDbSettingName(TARGET_UNITTEST_DATABASE);
                 } catch (Exception ex) {
                     System.err.println("Fail to read table: " + tableName);
-                }
-            }
-
-            // UnitTestテーブルの名称調整
-            for (OiyoSettingsEntitySet entitySet : oiyoSettings.getEntitySet()) {
-                if ("ODataTest1".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests1");
-                }
-                if ("ODataTest2".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests2");
-                }
-                if ("ODataTest3".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests3");
-                }
-                if ("OData Test4".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests4");
-                    entitySet.getEntityType().setName("ODataTest4");
-                }
-                if ("ODataTest5".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests5");
-                }
-                if ("ODataTest6".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests6");
-                }
-                if ("ODataTest7".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests7");
                 }
             }
 
