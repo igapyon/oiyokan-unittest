@@ -70,6 +70,14 @@
 		</repository>
 	</distributionManagement>
 
+	<repositories>
+		<repository>
+			<id>project.local</id>
+			<name>project</name>
+			<url>file:./repo</url>
+		</repository>
+	</repositories>
+
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -120,6 +128,49 @@
 			<artifactId>ojdbc11</artifactId>
 			<version>21.1.0.0</version>
 		</dependency>
+
+
+
+		<!-- From oiyokan : DUP -->
+		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-server-api -->
+		<dependency>
+			<groupId>org.apache.olingo</groupId>
+			<artifactId>odata-server-api</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-server-core -->
+		<dependency>
+			<groupId>org.apache.olingo</groupId>
+			<artifactId>odata-server-core</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-commons-api -->
+		<dependency>
+			<groupId>org.apache.olingo</groupId>
+			<artifactId>odata-commons-api</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-commons-core -->
+		<dependency>
+			<groupId>org.apache.olingo</groupId>
+			<artifactId>odata-commons-core</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.200</version>
+		</dependency>
+		<!-- From oiyokan : DUP -->
+
 	</dependencies>
 
 	<build>
