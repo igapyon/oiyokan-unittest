@@ -180,7 +180,7 @@
             "edmType": "Edm.Boolean",
             "jdbcType": "Types.BOOLEAN",
             "dbType": "BOOLEAN",
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "Single1",
@@ -204,7 +204,7 @@
             "edmType": "Edm.Date",
             "jdbcType": "Types.DATE",
             "dbType": "DATE",
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "DateTimeOffset1",
@@ -212,7 +212,7 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "TimeOfDay1",
@@ -279,7 +279,7 @@
             "edmType": "Edm.Decimal",
             "jdbcType": "Types.DECIMAL",
             "dbType": "DECIMAL",
-            "nullable": false,
+            "nullable": true,
             "precision": 6,
             "scale": 2
           },
@@ -289,7 +289,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.CHAR",
             "dbType": "CHAR",
-            "nullable": false,
+            "nullable": true,
             "maxLength": 8,
             "lengthFixed": true
           },
@@ -299,7 +299,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "VARCHAR",
-            "nullable": false,
+            "nullable": true,
             "maxLength": 255
           },
           {
@@ -308,7 +308,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "VARCHAR",
-            "nullable": false,
+            "nullable": true,
             "maxLength": 80
           },
           {
