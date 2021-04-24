@@ -22,6 +22,7 @@ import org.junit.jupiter.api.Test;
 
 import jp.oiyokan.OiyokanUnittestUtil;
 import jp.oiyokan.common.OiyoInfo;
+import jp.oiyokan.common.OiyoUrlUtil;
 import jp.oiyokan.util.OiyokanTestUtil;
 
 /**
@@ -29,32 +30,42 @@ import jp.oiyokan.util.OiyokanTestUtil;
  */
 class UnitTestEntityPatchInsert01Test {
     /**
-     * PATCH(INSERT) + DELETE
+     * INSERT (PATCH)
      */
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
         final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
 
-        final int NOT_EXISTS_ID = OiyokanTestUtil.getNextUniqueId();
+        final int TEST_ID = OiyokanTestUtil.getNextUniqueId();
 
         // INSERT (PATCH)
         // 存在しないのでINSERTになるケース.
-        ODataResponse resp = OiyokanTestUtil.callRequestPatch("/ODataTests3(" + NOT_EXISTS_ID + ")", "{\n" //
+        // Decimal1,StringChar8,StringVar255
+        final String key = "Decimal1=543.21,StringChar8='ZZYYXX12',StringVar255='Val" + TEST_ID + "'";
+        ODataResponse resp = OiyokanTestUtil.callRequestPatch("/ODataTests2(" + key + ")", "{\n" //
                 + "  \"Name\":\"Name2\",\n" //
                 + "  \"Description\":\"Description2\"\n" + "}", false, false);
         assertEquals(204, resp.getStatusCode());
 
+        resp = OiyokanTestUtil.callRequestGetResponse( //
+                "/ODataTests2", OiyoUrlUtil.encodeUrlQuery("$select=Decimal1,StringChar8,StringVar255"));
+        @SuppressWarnings("unused")
+        String result = OiyokanTestUtil.stream2String(resp.getContent());
+        // System.err.println(result);
+
         // INSERTした後なので存在する
-        resp = OiyokanTestUtil.callRequestGetResponse("/ODataTests3(" + NOT_EXISTS_ID + ")", null);
+        resp = OiyokanTestUtil.callRequestGetResponse("/ODataTests2(" + key + ")", null);
+        result = OiyokanTestUtil.stream2String(resp.getContent());
+        // System.err.println(result);
         assertEquals(200, resp.getStatusCode());
 
         // DELETE
-        resp = OiyokanTestUtil.callRequestDelete("/ODataTests3(" + NOT_EXISTS_ID + ")");
+        resp = OiyokanTestUtil.callRequestDelete("/ODataTests2(" + key + ")");
         assertEquals(204, resp.getStatusCode());
 
         // DELETE したあとなので存在しない.
-        resp = OiyokanTestUtil.callRequestGetResponse("/ODataTests3(" + NOT_EXISTS_ID + ")", null);
+        resp = OiyokanTestUtil.callRequestGetResponse("/ODataTests2(" + key + ")", null);
         assertEquals(404, resp.getStatusCode());
     }
 }

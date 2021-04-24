@@ -117,7 +117,7 @@ class Gen11OiyokanSakilaSettingsJsonTest {
 
             for (String tableName : tableNameList) {
                 try {
-                    final OiyoSettingsEntitySet entitySet = OiyokanSettingsGenUtil.generateCreateOiyoJson(connTargetDb,
+                    final OiyoSettingsEntitySet entitySet = OiyokanSettingsGenUtil.generateSettingsEntitySet(connTargetDb,
                             tableName, OiyokanConstants.DatabaseType.valueOf(settingsDatabase.getType()));
                     oiyoSettings.getEntitySet().add(entitySet);
                     entitySet.setDbSettingName(TARGET_UNITTEST_DATABASE);
