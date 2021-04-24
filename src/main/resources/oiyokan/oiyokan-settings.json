@@ -1004,7 +1004,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -1139,7 +1140,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -1180,7 +1182,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -1229,7 +1232,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -1270,7 +1274,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -1345,7 +1350,8 @@
             "edmType": "Edm.Boolean",
             "jdbcType": "Types.BOOLEAN",
             "dbType": "BOOLEAN",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "TRUE"
           },
           {
             "name": "create_date",
@@ -1353,7 +1359,8 @@
             "edmType": "Edm.Date",
             "jdbcType": "Types.DATE",
             "dbType": "DATE",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "CURRENT_DATE"
           },
           {
             "name": "last_update",
@@ -1361,7 +1368,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": true
+            "nullable": true,
+            "dbDefault": "NOW()"
           },
           {
             "name": "active",
@@ -1527,7 +1535,8 @@
             "edmType": "Edm.Int16",
             "jdbcType": "Types.SMALLINT",
             "dbType": "SMALLINT",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "3"
           },
           {
             "name": "rental_rate",
@@ -1537,7 +1546,8 @@
             "dbType": "DECIMAL",
             "nullable": false,
             "precision": 4,
-            "scale": 2
+            "scale": 2,
+            "dbDefault": "4.99"
           },
           {
             "name": "length",
@@ -1555,7 +1565,8 @@
             "dbType": "DECIMAL",
             "nullable": false,
             "precision": 5,
-            "scale": 2
+            "scale": 2,
+            "dbDefault": "19.99"
           },
           {
             "name": "rating",
@@ -1564,7 +1575,8 @@
             "jdbcType": "Types.VARCHAR",
             "dbType": "VARCHAR",
             "nullable": true,
-            "maxLength": 10
+            "maxLength": 10,
+            "dbDefault": "'G'"
           },
           {
             "name": "last_update",
@@ -1572,7 +1584,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           },
           {
             "name": "special_features",
@@ -1628,7 +1641,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -1668,7 +1682,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -1801,7 +1816,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -1843,7 +1859,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -2066,7 +2083,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
@@ -2218,7 +2236,8 @@
             "edmType": "Edm.Boolean",
             "jdbcType": "Types.BOOLEAN",
             "dbType": "BOOLEAN",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "TRUE"
           },
           {
             "name": "username",
@@ -2244,7 +2263,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           },
           {
             "name": "picture",
@@ -2385,7 +2405,8 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": false
+            "nullable": false,
+            "dbDefault": "NOW()"
           }
         ]
       }
