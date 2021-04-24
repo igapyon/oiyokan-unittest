@@ -40,6 +40,7 @@ class UnitTestQuery14Test {
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
         switch (databaseType) {
         case SQLSV2008:
+        case ORCL18:
             return;
         default:
             // テスト処理します。
