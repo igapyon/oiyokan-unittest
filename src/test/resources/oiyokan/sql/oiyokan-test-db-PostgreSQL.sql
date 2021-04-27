@@ -99,6 +99,30 @@ CREATE TABLE IF NOT EXISTS
     , PRIMARY KEY(ID)
   );
 
+CREATE TABLE IF NOT EXISTS
+  ODataTest8 (
+    MainKey VARCHAR(20) NOT NULL
+    , Description VARCHAR(250) DEFAULT 'Main table'
+    , PRIMARY KEY(MainKey)
+  );
+
+CREATE TABLE IF NOT EXISTS
+  ODataTest8Sub (
+    MainKey VARCHAR(20) NOT NULL
+    , SubKey VARCHAR(20) NOT NULL
+    , Description VARCHAR(250) DEFAULT 'Sub table'
+    , PRIMARY KEY(MainKey,SubKey)
+  );
+
+CREATE TABLE IF NOT EXISTS
+  ODataTest8SubSub (
+    MainKey VARCHAR(20) NOT NULL
+    , SubKey VARCHAR(20) NOT NULL
+    , SubSubKey VARCHAR(20) NOT NULL
+    , Description VARCHAR(250) DEFAULT 'Sub sub table'
+    , PRIMARY KEY(MainKey,SubKey,SubSubKey)
+  );
+
 INSERT INTO ODataTest1 (ID, Name, Description) VALUES (
   1, 'MacBookPro16,2', 'MacBook Pro (13-inch, 2020, Thunderbolt 3ポートx 4)');
 
