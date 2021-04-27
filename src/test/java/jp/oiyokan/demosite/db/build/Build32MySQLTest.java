@@ -40,6 +40,9 @@ class Build32MySQLTest {
             "DROP TABLE ODataTest5", //
             "DROP TABLE ODataTest6", //
             "DROP TABLE ODataTest7", //
+            "DROP TABLE ODataTest8", //
+            "DROP TABLE ODataTest8Sub", //
+            "DROP TABLE ODataTest8SubSub", //
     };
 
     @Test
