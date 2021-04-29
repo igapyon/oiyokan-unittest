@@ -78,7 +78,7 @@
             "jdbcType": "Types.INTEGER",
             "dbType": "INTEGER",
             "autoGenKey" : true,
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "Name",
@@ -344,7 +344,7 @@
             "jdbcType": "Types.INTEGER",
             "dbType": "INTEGER",
             "autoGenKey" : true,
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "Name",
@@ -589,7 +589,7 @@
             "jdbcType": "Types.BIGINT",
             "dbType": "BIGINT",
             "autoGenKey" : true,
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "Name",
@@ -632,7 +632,7 @@
             "jdbcType": "Types.INTEGER",
             "dbType": "INTEGER",
             "autoGenKey" : true,
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "Name",
