@@ -35,15 +35,13 @@ class UnitTestQueryBinaryNe01Test {
         @SuppressWarnings("unused")
         final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
 
-        final ODataResponse resp = OiyokanTestUtil.callRequestGetResponse( //
-                "/ODataTests1", //
+        final ODataResponse resp = OiyokanTestUtil.callGet( //
+                "/ODataTest1", //
                 OiyoUrlUtil.encodeUrlQuery(
-                        "&$filter=Int32a ne Int64a or Int16a ne Int32a &$top=2 &$count=true &$select=ID &$orderby=ID asc"));
+                        "&$filter=Int32a ne Int64a or Int16a ne Int32a &$top=2 &$select=ID &$orderby=ID asc"));
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
-        assertEquals(
-                "{\"@odata.context\":\"$metadata#ODataTests1\",\"@odata.count\":204,\"value\":[{\"ID\":1},{\"ID\":2}]}",
-                result);
+        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1},{\"ID\":2}]}", result);
         assertEquals(200, resp.getStatusCode());
     }
 }

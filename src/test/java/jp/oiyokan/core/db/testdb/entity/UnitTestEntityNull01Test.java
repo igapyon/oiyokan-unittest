@@ -39,24 +39,30 @@ class UnitTestEntityNull01Test {
 
         // INSERT + DELETE
         // 自動項目の ID もNULLで引き渡す。
-        ODataResponse resp = OiyokanTestUtil.callRequestPost("/ODataTests1", "{\n" //
-                + "  \"ID\":null,\n" //
-                + "  \"Name\":\"Name\",\n" //
-                + "  \"Description\":\"Description\"\n" + "}");
+        ODataResponse resp = OiyokanTestUtil.callPost("/ODataTest1", "{\n" //
+                + "  \"ID\":null\n" //
+                + "  , \"Name\":\"Name\"\n" //
+                + "  , \"Description\":\"Null test\"\n" //
+                + "  , \"Sbyte1\":null\n" //
+                + "  , \"Int16a\":null\n" //
+                + "  , \"Single1\":null\n" //
+                + "  , \"Double1\":null\n" //
+                + "  , \"Decimal1\":null\n" //
+                + "}");
         String result = OiyokanTestUtil.stream2String(resp.getContent());
         System.err.println("TRACE: " + result);
         final String idString = OiyokanTestUtil.getValueFromResultByKey(result, "ID");
         assertEquals(201, resp.getStatusCode(), "");
 
-        resp = OiyokanTestUtil.callRequestGetResponse("/ODataTests1(" + idString + ")", null);
+        resp = OiyokanTestUtil.callGet("/ODataTest1(" + idString + ")", null);
         assertEquals(200, resp.getStatusCode());
 
         // DELETE
-        resp = OiyokanTestUtil.callRequestDelete("/ODataTests1(" + idString + ")");
+        resp = OiyokanTestUtil.callDelete("/ODataTest1(" + idString + ")");
         assertEquals(204, resp.getStatusCode());
 
         // NOT FOUND after DELETED
-        resp = OiyokanTestUtil.callRequestGetResponse("/ODataTests1(" + idString + ")", null);
+        resp = OiyokanTestUtil.callGet("/ODataTest1(" + idString + ")", null);
         assertEquals(404, resp.getStatusCode());
     }
 }

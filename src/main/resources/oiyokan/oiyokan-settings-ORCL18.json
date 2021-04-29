@@ -13,7 +13,7 @@
     },
     {
       "name": "postgres1",
-      "type": "postgres",
+      "type": "PostgreSQL",
       "description": "Sample postgres settings. Change the settings to suit your environment.",
       "jdbcDriver": "org.postgresql.Driver",
       "jdbcUrl": "jdbc:postgresql://localhost:5432/dvdrental",
@@ -59,7 +59,7 @@
   ],
   "entitySet": [
     {
-      "name": "ODataTests1",
+      "name": "ODataTest1",
       "description": "Description.",
       "dbSettingName": "oracle1",
       "canCreate": true,
@@ -78,7 +78,7 @@
             "jdbcType": "Types.INTEGER",
             "dbType": "INTEGER",
             "autoGenKey" : true,
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "Name",
@@ -86,7 +86,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "VARCHAR",
-            "nullable": false,
+            "nullable": true,
             "maxLength": 80
           },
           {
@@ -95,7 +95,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "VARCHAR",
-            "nullable": false,
+            "nullable": true,
             "maxLength": 250
           },
           {
@@ -262,7 +262,7 @@
       }
     },
     {
-      "name": "ODataTests2",
+      "name": "ODataTest2",
       "description": "Description.",
       "dbSettingName": "oracle1",
       "canCreate": true,
@@ -325,7 +325,7 @@
       }
     },
     {
-      "name": "ODataTests3",
+      "name": "ODataTest3",
       "description": "Description.",
       "dbSettingName": "oracle1",
       "canCreate": true,
@@ -344,7 +344,7 @@
             "jdbcType": "Types.INTEGER",
             "dbType": "INTEGER",
             "autoGenKey" : true,
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "Name",
@@ -528,7 +528,7 @@
       }
     },
     {
-      "name": "ODataTests4",
+      "name": "ODataTest4",
       "description": "Description.",
       "dbSettingName": "oracle1",
       "canCreate": true,
@@ -570,7 +570,7 @@
       }
     },
     {
-      "name": "ODataTests5",
+      "name": "ODataTest5",
       "description": "Description.",
       "dbSettingName": "oracle1",
       "canCreate": true,
@@ -589,7 +589,7 @@
             "jdbcType": "Types.BIGINT",
             "dbType": "BIGINT",
             "autoGenKey" : true,
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "Name",
@@ -613,7 +613,7 @@
       }
     },
     {
-      "name": "ODataTests6",
+      "name": "ODataTest6",
       "description": "Description.",
       "dbSettingName": "oracle1",
       "canCreate": true,
@@ -632,7 +632,7 @@
             "jdbcType": "Types.INTEGER",
             "dbType": "INTEGER",
             "autoGenKey" : true,
-            "nullable": false
+            "nullable": true
           },
           {
             "name": "Name",
@@ -691,7 +691,7 @@
       }
     },
     {
-      "name": "ODataTests7",
+      "name": "ODataTest7",
       "description": "Description.",
       "dbSettingName": "oracle1",
       "canCreate": true,
@@ -741,7 +741,7 @@
       }
     },
     {
-      "name": "ODataTest8s",
+      "name": "ODataTest8",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -776,7 +776,7 @@
       }
     },
     {
-      "name": "ODataTest8Subs",
+      "name": "ODataTest8Sub",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -820,7 +820,7 @@
       }
     },
     {
-      "name": "ODataTest8SubSubs",
+      "name": "ODataTest8SubSub",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
