@@ -44,7 +44,7 @@ class SakilaDollSearchTest {
 
             String[] entry = entrys[1].split("['?']");
 
-            final ODataResponse resp = OiyokanTestUtil.callRequestGetResponse(entry[0], entry[1]);
+            final ODataResponse resp = OiyokanTestUtil.callGet(entry[0], entry[1]);
             final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
             if (true) {

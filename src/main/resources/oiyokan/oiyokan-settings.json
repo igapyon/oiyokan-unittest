@@ -59,7 +59,7 @@
   ],
   "entitySet": [
     {
-      "name": "ODataTests1",
+      "name": "ODataTest1",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -282,7 +282,7 @@
       }
     },
     {
-      "name": "ODataTests2",
+      "name": "ODataTest2",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -349,7 +349,7 @@
       }
     },
     {
-      "name": "ODataTests3",
+      "name": "ODataTest3",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -573,7 +573,7 @@
       }
     },
     {
-      "name": "ODataTests4",
+      "name": "ODataTest4",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -617,7 +617,7 @@
       }
     },
     {
-      "name": "ODataTests5",
+      "name": "ODataTest5",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -662,7 +662,7 @@
       }
     },
     {
-      "name": "ODataTests6",
+      "name": "ODataTest6",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -746,7 +746,7 @@
       }
     },
     {
-      "name": "ODataTests7",
+      "name": "ODataTest7",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -799,7 +799,7 @@
       }
     },
     {
-      "name": "ODataTest8s",
+      "name": "ODataTest8",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -834,7 +834,7 @@
       }
     },
     {
-      "name": "ODataTest8Subs",
+      "name": "ODataTest8Sub",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -878,7 +878,7 @@
       }
     },
     {
-      "name": "ODataTest8SubSubs",
+      "name": "ODataTest8SubSub",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -931,7 +931,7 @@
       }
     },
     {
-      "name": "ODataTestFulls1s",
+      "name": "ODataTestFulls1",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,

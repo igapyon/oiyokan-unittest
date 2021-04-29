@@ -53,12 +53,12 @@ class OiyokanOdata4RegisterTest {
     void test03() throws Exception {
         final MockHttpServletRequest req = new MockHttpServletRequest();
         final MockHttpServletResponse resp = new MockHttpServletResponse();
-        final String url = "https://oiyokan.herokuapp.com" + OiyokanOdata4Register.ODATA_ROOTPATH + "/Oiyokans";
+        final String url = "https://oiyokan.herokuapp.com" + OiyokanOdata4Register.ODATA_ROOTPATH + "/Oiyokan";
         req.setMethod("GET");
         req.setRequestURI(url);
         new OiyokanOdata4Register().serv(req, resp);
         assertEquals(
-                "{\"@odata.context\":\"$metadata#Oiyokans\",\"value\":[{\"KeyName\":\"Provider\",\"KeyValue\":\"Oiyokan\"},{\"KeyName\":\"Version\",\"KeyValue\":\""
+                "{\"@odata.context\":\"$metadata#Oiyokan\",\"value\":[{\"KeyName\":\"Provider\",\"KeyValue\":\"Oiyokan\"},{\"KeyName\":\"Version\",\"KeyValue\":\""
                         + OiyokanConstants.VERSION + "\"}]}",
                 resp.getContentAsString());
         assertEquals(200, resp.getStatus());
