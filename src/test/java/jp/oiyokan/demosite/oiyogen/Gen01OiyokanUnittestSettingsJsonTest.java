@@ -92,8 +92,8 @@ class Gen01OiyokanUnittestSettingsJsonTest {
 
             for (String tableName : tableNameList) {
                 try {
-                    final OiyoSettingsEntitySet entitySet = OiyokanSettingsGenUtil.generateSettingsEntitySet(connTargetDb,
-                            tableName, OiyokanConstants.DatabaseType.valueOf(settingsDatabase.getType()));
+                    final OiyoSettingsEntitySet entitySet = OiyokanSettingsGenUtil.generateSettingsEntitySet(
+                            connTargetDb, tableName, OiyokanConstants.DatabaseType.valueOf(settingsDatabase.getType()));
                     oiyoSettings.getEntitySet().add(entitySet);
                     entitySet.setDbSettingName(TARGET_UNITTEST_DATABASE);
                 } catch (Exception ex) {
@@ -103,27 +103,27 @@ class Gen01OiyokanUnittestSettingsJsonTest {
 
             // UnitTestテーブルの名称調整
             for (OiyoSettingsEntitySet entitySet : oiyoSettings.getEntitySet()) {
-                if ("ODataTest1".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests1");
+                if ("ODataTest1".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                    entitySet.setName("ODataTest1");
                 }
-                if ("ODataTest2".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests2");
+                if ("ODataTest2".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                    entitySet.setName("ODataTest2");
                 }
-                if ("ODataTest3".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests3");
+                if ("ODataTest3".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                    entitySet.setName("ODataTest3");
                 }
-                if ("OData Test4".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests4");
+                if ("OData Test4".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                    entitySet.setName("ODataTest4");
                     entitySet.getEntityType().setName("ODataTest4");
                 }
-                if ("ODataTest5".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests5");
+                if ("ODataTest5".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                    entitySet.setName("ODataTest5");
                 }
-                if ("ODataTest6".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests6");
+                if ("ODataTest6".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                    entitySet.setName("ODataTest6");
                 }
-                if ("ODataTest7".equals(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTests7");
+                if ("ODataTest7".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                    entitySet.setName("ODataTest7");
                 }
             }
 
