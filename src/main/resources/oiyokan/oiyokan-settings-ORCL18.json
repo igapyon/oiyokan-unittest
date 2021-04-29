@@ -86,7 +86,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "VARCHAR",
-            "nullable": false,
+            "nullable": true,
             "maxLength": 80
           },
           {
@@ -95,7 +95,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "VARCHAR",
-            "nullable": false,
+            "nullable": true,
             "maxLength": 250
           },
           {
