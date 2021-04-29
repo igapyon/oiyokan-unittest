@@ -741,7 +741,7 @@
       }
     },
     {
-      "name": "ODataTest8s",
+      "name": "ODataTest8",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -776,7 +776,7 @@
       }
     },
     {
-      "name": "ODataTest8Subs",
+      "name": "ODataTest8Sub",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
@@ -820,7 +820,7 @@
       }
     },
     {
-      "name": "ODataTest8SubSubs",
+      "name": "ODataTest8SubSub",
       "description": "Description.",
       "dbSettingName": "oiyoUnitTestDb",
       "canCreate": true,
