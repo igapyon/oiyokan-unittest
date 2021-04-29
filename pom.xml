@@ -12,7 +12,7 @@
 
 	<groupId>jp.oiyokan</groupId>
 	<artifactId>oiyokan-demosite</artifactId>
-	<version>1.6.20210421</version>
+	<version>1.9.20210429b</version>
 	<name>oiyokan-demosite</name>
 	<description>Oiyokan is a simple OData v4 Server. (based on Apache
 		Olingo / Spring Boot / h2 database)</description>
@@ -70,10 +70,25 @@
 		</repository>
 	</distributionManagement>
 
+	<repositories>
+		<repository>
+			<id>project.local</id>
+			<name>project</name>
+			<url>file:./repo</url>
+		</repository>
+	</repositories>
+
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+		<!-- Oiyokan Library -->
+		<dependency>
+			<groupId>jp.oiyokan</groupId>
+			<artifactId>oiyokan</artifactId>
+			<version>1.9.20210429b</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -86,12 +101,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>jp.oiyokan</groupId>
-			<artifactId>oiyokan</artifactId>
-			<version>1.5.20210420</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
@@ -119,6 +128,49 @@
 			<artifactId>ojdbc11</artifactId>
 			<version>21.1.0.0</version>
 		</dependency>
+
+
+
+		<!-- From oiyokan : DUP -->
+		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-server-api -->
+		<dependency>
+			<groupId>org.apache.olingo</groupId>
+			<artifactId>odata-server-api</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-server-core -->
+		<dependency>
+			<groupId>org.apache.olingo</groupId>
+			<artifactId>odata-server-core</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-commons-api -->
+		<dependency>
+			<groupId>org.apache.olingo</groupId>
+			<artifactId>odata-commons-api</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-commons-core -->
+		<dependency>
+			<groupId>org.apache.olingo</groupId>
+			<artifactId>odata-commons-core</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.200</version>
+		</dependency>
+		<!-- From oiyokan : DUP -->
+
 	</dependencies>
 
 	<build>

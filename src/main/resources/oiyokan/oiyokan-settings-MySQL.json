@@ -13,7 +13,7 @@
     },
     {
       "name": "postgres1",
-      "type": "postgres",
+      "type": "PostgreSQL",
       "description": "Sample postgres settings. Change the settings to suit your environment.",
       "jdbcDriver": "org.postgresql.Driver",
       "jdbcUrl": "jdbc:postgresql://localhost:5432/dvdrental",
@@ -59,7 +59,7 @@
   ],
   "entitySet": [
     {
-      "name": "ODataTests1",
+      "name": "ODataTest1",
       "description": "Description.",
       "dbSettingName": "mysql1",
       "canCreate": true,
@@ -77,6 +77,7 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "INTEGER",
+            "autoGenKey" : true,
             "nullable": false
           },
           {
@@ -261,7 +262,7 @@
       }
     },
     {
-      "name": "ODataTests2",
+      "name": "ODataTest2",
       "description": "Description.",
       "dbSettingName": "mysql1",
       "canCreate": true,
@@ -324,7 +325,7 @@
       }
     },
     {
-      "name": "ODataTests3",
+      "name": "ODataTest3",
       "description": "Description.",
       "dbSettingName": "mysql1",
       "canCreate": true,
@@ -342,6 +343,7 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "INTEGER",
+            "autoGenKey" : true,
             "nullable": false
           },
           {
@@ -526,7 +528,7 @@
       }
     },
     {
-      "name": "ODataTests4",
+      "name": "ODataTest4",
       "description": "Description.",
       "dbSettingName": "mysql1",
       "canCreate": true,
@@ -568,7 +570,7 @@
       }
     },
     {
-      "name": "ODataTests5",
+      "name": "ODataTest5",
       "description": "Description.",
       "dbSettingName": "mysql1",
       "canCreate": true,
@@ -586,6 +588,7 @@
             "edmType": "Edm.Int64",
             "jdbcType": "Types.BIGINT",
             "dbType": "BIGINT",
+            "autoGenKey" : true,
             "nullable": false
           },
           {
@@ -610,7 +613,7 @@
       }
     },
     {
-      "name": "ODataTests6",
+      "name": "ODataTest6",
       "description": "Description.",
       "dbSettingName": "mysql1",
       "canCreate": true,
@@ -628,6 +631,7 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "INTEGER",
+            "autoGenKey" : true,
             "nullable": false
           },
           {
@@ -687,7 +691,7 @@
       }
     },
     {
-      "name": "ODataTests7",
+      "name": "ODataTest7",
       "description": "Description.",
       "dbSettingName": "mysql1",
       "canCreate": true,
@@ -732,6 +736,138 @@
             "jdbcType": "Types.BINARY",
             "dbType": "UUID",
             "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest8",
+      "description": "Description.",
+      "dbSettingName": "oiyoUnitTestDb",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest8",
+        "dbName": "ODataTest8",
+        "keyName": ["MainKey"],
+        "property": [
+          {
+            "name": "MainKey",
+            "dbName": "MainKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "Description",
+            "dbName": "Description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'Main table'"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest8Sub",
+      "description": "Description.",
+      "dbSettingName": "oiyoUnitTestDb",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest8Sub",
+        "dbName": "ODataTest8Sub",
+        "keyName": ["MainKey", "SubKey"],
+        "property": [
+          {
+            "name": "MainKey",
+            "dbName": "MainKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "SubKey",
+            "dbName": "SubKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "Description",
+            "dbName": "Description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'Sub table'"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest8SubSub",
+      "description": "Description.",
+      "dbSettingName": "oiyoUnitTestDb",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest8SubSub",
+        "dbName": "ODataTest8SubSub",
+        "keyName": ["MainKey", "SubKey", "SubSubKey"],
+        "property": [
+          {
+            "name": "MainKey",
+            "dbName": "MainKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "SubKey",
+            "dbName": "SubKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "SubSubKey",
+            "dbName": "SubSubKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "Description",
+            "dbName": "Description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'Sub sub table'"
           }
         ]
       }

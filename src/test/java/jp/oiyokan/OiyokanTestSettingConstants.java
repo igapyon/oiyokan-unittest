@@ -17,6 +17,7 @@ package jp.oiyokan;
 
 /**
  * テスト実行に関しての設定情報
+ * @deprecated
  */
 public class OiyokanTestSettingConstants {
     public static final boolean IS_TEST_ODATATEST = true;
