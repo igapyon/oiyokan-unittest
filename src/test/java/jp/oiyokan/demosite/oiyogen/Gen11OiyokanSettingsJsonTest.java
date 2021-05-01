@@ -46,6 +46,7 @@ import jp.oiyokan.oiyogen.OiyokanSettingsGenUtil;
 class Gen11OiyokanSettingsJsonTest {
     private static final String TARGET_UNITTEST_DATABASE = "oiyoUnitTestDb";
     // private static final String TARGET_UNITTEST_DATABASE = "postgres1";
+    // private static final String TARGET_UNITTEST_DATABASE = "mysql2";
 
     @Test
     void test01() throws Exception {
