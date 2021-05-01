@@ -21,6 +21,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -42,9 +43,10 @@ import jp.oiyokan.oiyogen.OiyokanSettingsGenUtil;
 /**
  * Generate oiyokan-unittest-settings.json
  */
-class Gen11OiyokanSakilaSettingsJsonTest {
+class Gen11OiyokanSettingsJsonTest {
     private static final String TARGET_UNITTEST_DATABASE = "oiyoUnitTestDb";
-   // private static final String TARGET_UNITTEST_DATABASE = "postgres1";
+    // private static final String TARGET_UNITTEST_DATABASE = "postgres1";
+    // private static final String TARGET_UNITTEST_DATABASE = "mysql2";
 
     @Test
     void test01() throws Exception {
@@ -77,7 +79,7 @@ class Gen11OiyokanSakilaSettingsJsonTest {
                             "org.h2.Driver", //
                             "jdbc:h2:file:./src/main/resources/db/oiyokan-internal;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=FALSE;MODE=MSSQLServer", //
                             "sa", "" }, //
-                    { "postgres1", "postgres",
+                    { "postgres1", "PostgreSQL",
                             "Sample postgres settings. Change the settings to suit your environment.", //
                             "org.postgresql.Driver", //
                             "jdbc:postgresql://localhost:5432/dvdrental", //
@@ -117,8 +119,8 @@ class Gen11OiyokanSakilaSettingsJsonTest {
 
             for (String tableName : tableNameList) {
                 try {
-                    final OiyoSettingsEntitySet entitySet = OiyokanSettingsGenUtil.generateSettingsEntitySet(connTargetDb,
-                            tableName, OiyokanConstants.DatabaseType.valueOf(settingsDatabase.getType()));
+                    final OiyoSettingsEntitySet entitySet = OiyokanSettingsGenUtil.generateSettingsEntitySet(
+                            connTargetDb, tableName, OiyokanConstants.DatabaseType.valueOf(settingsDatabase.getType()));
                     oiyoSettings.getEntitySet().add(entitySet);
                     entitySet.setDbSettingName(TARGET_UNITTEST_DATABASE);
                 } catch (Exception ex) {
@@ -128,74 +130,89 @@ class Gen11OiyokanSakilaSettingsJsonTest {
 
             // Sakila Sample db の名称調整。
             for (OiyoSettingsEntitySet entitySet : oiyoSettings.getEntitySet()) {
-                if (entitySet.getName().equals("actors")) {
+                if (entitySet.getName().equals("actor")) {
                     entitySet.setName("SklActors");
                     entitySet.getEntityType().setName("SklActor");
-                } else if (entitySet.getName().equals("actor_infos")) {
+                } else if (entitySet.getName().equals("actor_info")) {
                     entitySet.setName("SklActorInfos");
                     entitySet.getEntityType().setName("SklActorInfo");
-                } else if (entitySet.getName().equals("addresss")) {
+                    entitySet.getEntityType().getKeyName().add("actor_id");
+                } else if (entitySet.getName().equals("address")) {
                     entitySet.setName("SklAddresses");
                     entitySet.getEntityType().setName("SklAddress");
-                } else if (entitySet.getName().equals("categorys")) {
+                } else if (entitySet.getName().equals("category")) {
                     entitySet.setName("SklCategories");
                     entitySet.getEntityType().setName("SklCategory");
-                } else if (entitySet.getName().equals("citys")) {
+                } else if (entitySet.getName().equals("city")) {
                     entitySet.setName("SklCities");
                     entitySet.getEntityType().setName("SklCity");
-                } else if (entitySet.getName().equals("countrys")) {
+                } else if (entitySet.getName().equals("country")) {
                     entitySet.setName("SklCountries");
                     entitySet.getEntityType().setName("SklCountry");
-                } else if (entitySet.getName().equals("customers")) {
+                } else if (entitySet.getName().equals("customer")) {
                     entitySet.setName("SklCustomers");
                     entitySet.getEntityType().setName("SklCustomer");
-                } else if (entitySet.getName().equals("customer_lists")) {
+                } else if (entitySet.getName().equals("customer_list")) {
                     entitySet.setName("SklCustomerLists");
                     entitySet.getEntityType().setName("SklCustomerList");
-                } else if (entitySet.getName().equals("films")) {
+                    entitySet.getEntityType().getKeyName().add("id");
+                } else if (entitySet.getName().equals("film")) {
                     entitySet.setName("SklFilms");
                     entitySet.getEntityType().setName("SklFilm");
-                } else if (entitySet.getName().equals("film_actors")) {
+                } else if (entitySet.getName().equals("film_actor")) {
                     entitySet.setName("SklFilmActors");
                     entitySet.getEntityType().setName("SklFilmActor");
-                } else if (entitySet.getName().equals("film_categorys")) {
+                } else if (entitySet.getName().equals("film_category")) {
                     entitySet.setName("SklFilmCategories");
                     entitySet.getEntityType().setName("SklFilmCategory");
-                } else if (entitySet.getName().equals("film_lists")) {
+                } else if (entitySet.getName().equals("film_list")) {
                     entitySet.setName("SklFilmLists");
                     entitySet.getEntityType().setName("SklFilmList");
-                } else if (entitySet.getName().equals("inventorys")) {
+                    entitySet.getEntityType().getKeyName().add("fid");
+                } else if (entitySet.getName().equals("inventory")) {
                     entitySet.setName("SklInventories");
                     entitySet.getEntityType().setName("SklInventory");
-                } else if (entitySet.getName().equals("languages")) {
+                } else if (entitySet.getName().equals("language")) {
                     entitySet.setName("SklLanguages");
                     entitySet.getEntityType().setName("SklLanguage");
-                } else if (entitySet.getName().equals("nicer_but_slower_film_lists")) {
+                } else if (entitySet.getName().equals("nicer_but_slower_film_list")) {
                     entitySet.setName("SklNicerButSlowerFilmLists");
                     entitySet.getEntityType().setName("SklNicerButSlowerFilmList");
-                } else if (entitySet.getName().equals("payments")) {
+                    entitySet.getEntityType().getKeyName().add("fid");
+                } else if (entitySet.getName().equals("payment")) {
                     entitySet.setName("SklPayments");
                     entitySet.getEntityType().setName("SklPayment");
-                } else if (entitySet.getName().equals("rentals")) {
+                } else if (entitySet.getName().equals("rental")) {
                     entitySet.setName("SklRentals");
                     entitySet.getEntityType().setName("SklRental");
-                } else if (entitySet.getName().equals("sales_by_film_categorys")) {
+                } else if (entitySet.getName().equals("sales_by_film_category")) {
                     entitySet.setName("SklSalesByFilmCategories");
                     entitySet.getEntityType().setName("SklSalesByFilmCategory");
-                } else if (entitySet.getName().equals("sales_by_stores")) {
+                    entitySet.getEntityType().getKeyName().add("category");
+                } else if (entitySet.getName().equals("sales_by_store")) {
                     entitySet.setName("SklSalesByStores");
                     entitySet.getEntityType().setName("SklSalesByStore");
-                } else if (entitySet.getName().equals("staffs")) {
+                    entitySet.getEntityType().getKeyName().add("store");
+                } else if (entitySet.getName().equals("staff")) {
                     entitySet.setName("SklStaffs");
                     entitySet.getEntityType().setName("SklStaff");
-                } else if (entitySet.getName().equals("staff_lists")) {
+                } else if (entitySet.getName().equals("staff_list")) {
                     entitySet.setName("SklStaffLists");
                     entitySet.getEntityType().setName("SklStaffList");
-                } else if (entitySet.getName().equals("stores")) {
+                    entitySet.getEntityType().getKeyName().add("id");
+                } else if (entitySet.getName().equals("store")) {
                     entitySet.setName("SklStores");
                     entitySet.getEntityType().setName("SklStore");
                 }
             }
+
+            Gen01OiyokanUnittestSettingsJsonTest.adjustUnitTableName(oiyoSettings);
+            Collections.sort(oiyoSettings.getEntitySet(), new Comparator<OiyoSettingsEntitySet>() {
+                @Override
+                public int compare(OiyoSettingsEntitySet o1, OiyoSettingsEntitySet o2) {
+                    return o1.getName().compareTo(o2.getName());
+                }
+            });
 
             StringWriter writer = new StringWriter();
             ObjectMapper mapper = new ObjectMapper();
