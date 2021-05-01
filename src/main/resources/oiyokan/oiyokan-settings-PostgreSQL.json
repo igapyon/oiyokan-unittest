@@ -215,7 +215,7 @@
             "nullable": true
           },
           {
-            "name": "varbinary1",
+            "name": "VarBinary1",
             "dbName": "varbinary1",
             "edmType": "Edm.Binary",
             "jdbcStream": true,
@@ -224,7 +224,7 @@
             "nullable": true
           },
           {
-            "name": "longvarbinary1",
+            "name": "LongVarBinary1",
             "dbName": "longvarbinary1",
             "edmType": "Edm.Binary",
             "jdbcStream": true,
@@ -233,7 +233,7 @@
             "nullable": true
           },
           {
-            "name": "blob1",
+            "name": "Blob1",
             "dbName": "blob1",
             "edmType": "Edm.Binary",
             "jdbcType": "Types.BINARY",
@@ -2063,6 +2063,8 @@
             "edmType": "Edm.Decimal",
             "jdbcType": "Types.NUMERIC",
             "dbType": "numeric",
+            "precision": 6,
+            "scale": 2,
             "nullable": true
           }
         ]

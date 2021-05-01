@@ -83,8 +83,8 @@ class OiyoSqlQueryListExprTest {
 
     @Test
     void test02() throws Exception {
-        assertEquals("((Description = ?) AND (ID = 2.0))", getExprString("/ODataTest1", //
-                OiyoUrlUtil.encodeUrlQuery("$filter=Description eq 'Mac' and ID eq 2.0")),
+        assertEquals("((Description = ?) AND (ID = 2.0))".toLowerCase(), getExprString("/ODataTest1", //
+                OiyoUrlUtil.encodeUrlQuery("$filter=Description eq 'Mac' and ID eq 2.0")).toLowerCase(),
                 "Postgres/ORCL18の場合大文字小文字の差異が出る");
     }
 
@@ -102,9 +102,10 @@ class OiyoSqlQueryListExprTest {
                     "ORCL18の場合、命令の差異、大文字小文字の差異が出る");
             break;
         case PostgreSQL:
-            assertEquals("((STRPOS(Description,?) - 1) <> -1)", getExprString("/ODataTest1", //
+            assertEquals("((STRPOS(Description,?) - 1) <> -1)".toLowerCase(), getExprString("/ODataTest1", //
                     OiyoUrlUtil.encodeUrlQuery(
-                            "$top=51&$filter= indexof(Description,'増殖タブレット7') ne -1 &$orderby=ID &$count=true &$select=Description,ID,Name")),
+                            "$top=51&$filter= indexof(Description,'増殖タブレット7') ne -1 &$orderby=ID &$count=true &$select=Description,ID,Name"))
+                                    .toLowerCase(),
                     "PostgreSQL");
             break;
         case SQLSV2008:
