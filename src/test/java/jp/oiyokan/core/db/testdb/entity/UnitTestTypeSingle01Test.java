@@ -53,7 +53,8 @@ class UnitTestTypeSingle01Test {
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
         switch (databaseType) {
         case PostgreSQL:
-            // PostgreSQL だと Single1 による検索がヒットしない。
+        case MySQL:
+            // PostgreSQL, MySQL だと Single1 は誤差により検索がヒットしない。
             break;
         default:
             result = OiyokanTestUtil.stream2String(resp.getContent());
