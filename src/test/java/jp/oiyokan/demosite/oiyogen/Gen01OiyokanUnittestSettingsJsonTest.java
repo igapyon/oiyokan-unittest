@@ -21,6 +21,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -101,31 +102,13 @@ class Gen01OiyokanUnittestSettingsJsonTest {
                 }
             }
 
-            // UnitTestテーブルの名称調整
-            for (OiyoSettingsEntitySet entitySet : oiyoSettings.getEntitySet()) {
-                if ("ODataTest1".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTest1");
+            adjustUnitTableName(oiyoSettings);
+            Collections.sort(oiyoSettings.getEntitySet(), new Comparator<OiyoSettingsEntitySet>() {
+                @Override
+                public int compare(OiyoSettingsEntitySet o1, OiyoSettingsEntitySet o2) {
+                    return o1.getName().compareTo(o2.getName());
                 }
-                if ("ODataTest2".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTest2");
-                }
-                if ("ODataTest3".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTest3");
-                }
-                if ("OData Test4".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTest4");
-                    entitySet.getEntityType().setName("ODataTest4");
-                }
-                if ("ODataTest5".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTest5");
-                }
-                if ("ODataTest6".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTest6");
-                }
-                if ("ODataTest7".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
-                    entitySet.setName("ODataTest7");
-                }
-            }
+            });
 
             StringWriter writer = new StringWriter();
             ObjectMapper mapper = new ObjectMapper();
@@ -138,6 +121,34 @@ class Gen01OiyokanUnittestSettingsJsonTest {
                     "./target/generated-oiyokan/auto-generated-oiyokan-unittest-settings.json");
             FileUtils.writeStringToFile(generateFile, writer.toString(), "UTF-8");
             System.err.println("oiyokan unittest setting file auto-generated: " + generateFile.getCanonicalPath());
+        }
+    }
+
+    static void adjustUnitTableName(OiyoSettings oiyoSettings) {
+        // UnitTestテーブルの名称調整
+        for (OiyoSettingsEntitySet entitySet : oiyoSettings.getEntitySet()) {
+            if ("ODataTest1".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                entitySet.setName("ODataTest1");
+            }
+            if ("ODataTest2".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                entitySet.setName("ODataTest2");
+            }
+            if ("ODataTest3".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                entitySet.setName("ODataTest3");
+            }
+            if ("OData Test4".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                entitySet.setName("ODataTest4");
+                entitySet.getEntityType().setName("ODataTest4");
+            }
+            if ("ODataTest5".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                entitySet.setName("ODataTest5");
+            }
+            if ("ODataTest6".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                entitySet.setName("ODataTest6");
+            }
+            if ("ODataTest7".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {
+                entitySet.setName("ODataTest7");
+            }
         }
     }
 }

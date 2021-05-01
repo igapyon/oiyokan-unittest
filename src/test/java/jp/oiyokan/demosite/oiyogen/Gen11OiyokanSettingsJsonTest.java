@@ -21,6 +21,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -203,6 +204,14 @@ class Gen11OiyokanSettingsJsonTest {
                     entitySet.getEntityType().setName("SklStore");
                 }
             }
+
+            Gen01OiyokanUnittestSettingsJsonTest.adjustUnitTableName(oiyoSettings);
+            Collections.sort(oiyoSettings.getEntitySet(), new Comparator<OiyoSettingsEntitySet>() {
+                @Override
+                public int compare(OiyoSettingsEntitySet o1, OiyoSettingsEntitySet o2) {
+                    return o1.getName().compareTo(o2.getName());
+                }
+            });
 
             StringWriter writer = new StringWriter();
             ObjectMapper mapper = new ObjectMapper();
