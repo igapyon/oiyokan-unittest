@@ -62,7 +62,7 @@ class Build00H2InterDbTest {
         }
 
         final OiyoInfo oiyoInfo = new OiyoInfo();
-        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings());
+        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings(oiyoInfo));
 
         for (String[] sqlFileDef : OIYOKAN_FILE_SQLS) {
             log.info("OData: load: internal db:" + sqlFileDef[0] + ", sql: " + sqlFileDef[1]);

@@ -41,6 +41,7 @@ import jp.oiyokan.dto.OiyoSettings;
 import jp.oiyokan.dto.OiyoSettingsDatabase;
 import jp.oiyokan.dto.OiyoSettingsEntitySet;
 import jp.oiyokan.oiyogen.OiyokanSettingsGenUtil;
+import jp.oiyokan.util.OiyoEncryptUtil;
 
 /**
  * Generate oiyokan-unittest-settings.json
@@ -92,7 +93,7 @@ class Gen01OiyokanUnittestSettingsJsonTest {
                 database.setJdbcDriver(databaseSetting[3]);
                 database.setJdbcUrl(databaseSetting[4]);
                 database.setJdbcUser(databaseSetting[5]);
-                database.setJdbcPass(databaseSetting[6]);
+                database.setJdbcPassEnc(OiyoEncryptUtil.encrypt(databaseSetting[6], oiyoInfo.getPassphrase()));
             }
 
             for (String tableName : tableNameList) {
