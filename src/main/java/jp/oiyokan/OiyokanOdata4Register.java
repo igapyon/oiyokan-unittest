@@ -45,6 +45,7 @@ public class OiyokanOdata4Register {
      */
     @RequestMapping(ODATA_ROOTPATH + "/*")
     public void serv(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException {
+        resp.addHeader("Cache-Control", "no-cache");
         OiyokanOdata4RegisterImpl.serv(req, resp, ODATA_ROOTPATH);
     }
 }
