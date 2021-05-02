@@ -71,7 +71,7 @@ class Build34ORCL18Test {
             }
 
             String[] sqls = OiyokanResourceSqlUtil
-                    .loadOiyokanResourceSql("oiyokan/sql/" + "oiyokan-test-db-ORCL18.sql");
+                    .loadOiyokanResourceSql("/oiyokan/sql/" + "oiyokan-test-db-ORCL18.sql");
             for (String sql : sqls) {
                 if (sql.trim().length() == 0) {
                     continue;

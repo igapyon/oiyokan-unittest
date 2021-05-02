@@ -67,7 +67,7 @@ class Build31PostgresTest {
             }
 
             String[] sqls = OiyokanResourceSqlUtil
-                    .loadOiyokanResourceSql("oiyokan/sql/" + "oiyokan-test-db-PostgreSQL.sql");
+                    .loadOiyokanResourceSql("/oiyokan/sql/" + "oiyokan-test-db-PostgreSQL.sql");
             for (String sql : sqls) {
                 if (sql.trim().length() == 0) {
                     continue;

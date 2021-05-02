@@ -70,7 +70,7 @@ class Build00H2InterDbTest {
             OiyoSettingsDatabase lookDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, sqlFileDef[0]);
 
             try (Connection connLoookDatabase = OiyoCommonJdbcUtil.getConnection(lookDatabase)) {
-                final String[] sqls = OiyokanResourceSqlUtil.loadOiyokanResourceSql("oiyokan/sql/" + sqlFileDef[1]);
+                final String[] sqls = OiyokanResourceSqlUtil.loadOiyokanResourceSql("/oiyokan/sql/" + sqlFileDef[1]);
                 for (String sql : sqls) {
                     try (var stmt = connLoookDatabase.prepareStatement(sql.trim())) {
                         stmt.executeUpdate();
