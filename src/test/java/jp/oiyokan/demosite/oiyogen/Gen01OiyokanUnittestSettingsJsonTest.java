@@ -25,6 +25,8 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -39,11 +41,14 @@ import jp.oiyokan.dto.OiyoSettings;
 import jp.oiyokan.dto.OiyoSettingsDatabase;
 import jp.oiyokan.dto.OiyoSettingsEntitySet;
 import jp.oiyokan.oiyogen.OiyokanSettingsGenUtil;
+import jp.oiyokan.util.OiyoEncryptUtil;
 
 /**
  * Generate oiyokan-unittest-settings.json
  */
 class Gen01OiyokanUnittestSettingsJsonTest {
+    private static final Log log = LogFactory.getLog(Gen01OiyokanUnittestSettingsJsonTest.class);
+
     private static final String TARGET_UNITTEST_DATABASE = "oiyoUnitTestDb";
 
     @Test
@@ -51,7 +56,7 @@ class Gen01OiyokanUnittestSettingsJsonTest {
         final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
 
         OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, TARGET_UNITTEST_DATABASE);
-        System.err.println("確認対象データベース: " + settingsDatabase.getName());
+        log.info("Target database: " + settingsDatabase.getName());
 
         try (Connection connTargetDb = OiyoCommonJdbcUtil.getConnection(settingsDatabase)) {
             final List<String> tableNameList = new ArrayList<>();
@@ -88,7 +93,7 @@ class Gen01OiyokanUnittestSettingsJsonTest {
                 database.setJdbcDriver(databaseSetting[3]);
                 database.setJdbcUrl(databaseSetting[4]);
                 database.setJdbcUser(databaseSetting[5]);
-                database.setJdbcPass(databaseSetting[6]);
+                database.setJdbcPassEnc(OiyoEncryptUtil.encrypt(databaseSetting[6], oiyoInfo.getPassphrase()));
             }
 
             for (String tableName : tableNameList) {
@@ -98,7 +103,7 @@ class Gen01OiyokanUnittestSettingsJsonTest {
                     oiyoSettings.getEntitySet().add(entitySet);
                     entitySet.setDbSettingName(TARGET_UNITTEST_DATABASE);
                 } catch (Exception ex) {
-                    System.err.println("Fail to read table: " + tableName);
+                    log.warn("Fail to read table: " + tableName);
                 }
             }
 
@@ -120,11 +125,11 @@ class Gen01OiyokanUnittestSettingsJsonTest {
             final File generateFile = new File(
                     "./target/generated-oiyokan/auto-generated-oiyokan-unittest-settings.json");
             FileUtils.writeStringToFile(generateFile, writer.toString(), "UTF-8");
-            System.err.println("oiyokan unittest setting file auto-generated: " + generateFile.getCanonicalPath());
+            log.info("oiyokan unittest setting file auto-generated: " + generateFile.getCanonicalPath());
         }
     }
 
-    static void adjustUnitTableName(OiyoSettings oiyoSettings) {
+    public static void adjustUnitTableName(OiyoSettings oiyoSettings) {
         // UnitTestテーブルの名称調整
         for (OiyoSettingsEntitySet entitySet : oiyoSettings.getEntitySet()) {
             if ("ODataTest1".equalsIgnoreCase(entitySet.getEntityType().getDbName())) {

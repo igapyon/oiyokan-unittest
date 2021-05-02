@@ -53,7 +53,7 @@ class Build31PostgresTest {
             return;
 
         final OiyoInfo oiyoInfo = new OiyoInfo();
-        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings());
+        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings(oiyoInfo));
 
         OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, "postgres1");
 
@@ -67,7 +67,7 @@ class Build31PostgresTest {
             }
 
             String[] sqls = OiyokanResourceSqlUtil
-                    .loadOiyokanResourceSql("oiyokan/sql/" + "oiyokan-test-db-PostgreSQL.sql");
+                    .loadOiyokanResourceSql("/oiyokan/sql/" + "oiyokan-test-db-PostgreSQL.sql");
             for (String sql : sqls) {
                 if (sql.trim().length() == 0) {
                     continue;

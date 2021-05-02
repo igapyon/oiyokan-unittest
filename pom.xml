@@ -10,9 +10,9 @@
 		<relativePath />
 	</parent>
 
-	<groupId>jp.oiyokan</groupId>
+	<groupId>jp.igapyon.oiyokan</groupId>
 	<artifactId>oiyokan-demosite</artifactId>
-	<version>1.10.20210502a</version>
+	<version>1.10.20210502c</version>
 	<name>oiyokan-demosite</name>
 	<description>Oiyokan is a simple OData v4 Server. (based on Apache
 		Olingo / Spring Boot / h2 database)</description>
@@ -84,7 +84,7 @@
 	<dependencies>
 		<!-- Oiyokan Library -->
 		<dependency>
-			<groupId>jp.oiyokan</groupId>
+			<groupId>jp.igapyon.oiyokan</groupId>
 			<artifactId>oiyokan</artifactId>
 			<version>${project.version}</version>
 		</dependency>
