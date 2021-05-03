@@ -48,7 +48,8 @@ public class OiyokanOdata4Register {
     @RequestMapping(ODATA_ROOTPATH + "/*")
     public void serv(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException {
         // Set cache control.
-        resp.addHeader("Cache-Control", "no-cache, no-store");
+        // 本体でキャッシュOFFするようになった。
+        // resp.addHeader("Cache-Control", "no-cache, no-store");
 
         // Process Oiyokan.
         OiyokanOdata4RegisterImpl.serv(req, resp, ODATA_ROOTPATH);
