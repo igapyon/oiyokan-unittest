@@ -7,7 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.oiyokan.OiyokanConstants;
-import jp.oiyokan.OiyokanOdata4Register;
+import jp.oiyokan.demosite.OiyokanDemositeConstants;
+import jp.oiyokan.demosite.OiyokanOdata4Register;
 
 @Controller
 public class ThIndexCtrl {
@@ -24,6 +25,10 @@ public class ThIndexCtrl {
     public static class IndexBean {
         public String getVersion() {
             return OiyokanConstants.VERSION;
+        }
+
+        public String getDemositeVersion() {
+            return OiyokanDemositeConstants.VERSION;
         }
     }
 }
