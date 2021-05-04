@@ -131,7 +131,7 @@
 
 
 
-		<!-- From oiyokan : DUP -->
+		<!-- From oiyokan : for url : file:./repo : DUP -->
 		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-server-api -->
 		<dependency>
 			<groupId>org.apache.olingo</groupId>
@@ -169,7 +169,7 @@
 			<artifactId>h2</artifactId>
 			<version>1.4.200</version>
 		</dependency>
-		<!-- From oiyokan : DUP -->
+		<!-- From oiyokan : for url : file:./repo : DUP -->
 
 	</dependencies>
 
