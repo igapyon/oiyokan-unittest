@@ -123,7 +123,7 @@ CREATE TABLE
     , PRIMARY KEY(MainKey,SubKey,SubSubKey)
   );
 
-CREATE TABLE IF NOT EXISTS
+CREATE TABLE
   ODataTest9 (
     Name VARCHAR(80) DEFAULT 'Ubnormal test case. Without Primary Key.'
     , Description VARCHAR(250) DEFAULT 'Ubnormal test case. Without Primary Key.'

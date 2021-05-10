@@ -106,7 +106,24 @@ CREATE TABLE
     , PRIMARY KEY(MainKey)
   );
 
-CREATE TABLE IF NOT EXISTS
+CREATE TABLE
+  ODataTest8Sub (
+    MainKey VARCHAR(20) NOT NULL
+    , SubKey VARCHAR(20) NOT NULL
+    , Description VARCHAR(250) DEFAULT 'Sub table'
+    , PRIMARY KEY(MainKey,SubKey)
+  );
+
+CREATE TABLE
+  ODataTest8SubSub (
+    MainKey VARCHAR(20) NOT NULL
+    , SubKey VARCHAR(20) NOT NULL
+    , SubSubKey VARCHAR(20) NOT NULL
+    , Description VARCHAR(250) DEFAULT 'Sub sub table'
+    , PRIMARY KEY(MainKey,SubKey,SubSubKey)
+  );
+
+CREATE TABLE
   ODataTest9 (
     Name VARCHAR(80) DEFAULT 'Ubnormal test case. Without Primary Key.'
     , Description VARCHAR(250) DEFAULT 'Ubnormal test case. Without Primary Key.'
