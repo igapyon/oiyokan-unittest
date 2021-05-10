@@ -743,7 +743,7 @@
     {
       "name": "ODataTest8",
       "description": "Description.",
-      "dbSettingName": "oiyoUnitTestDb",
+      "dbSettingName": "mysql1",
       "canCreate": true,
       "canRead": true,
       "canUpdate": true,
@@ -778,7 +778,7 @@
     {
       "name": "ODataTest9",
       "description": "Description.",
-      "dbSettingName": "oiyoUnitTestDb",
+      "dbSettingName": "mysql1",
       "canCreate": true,
       "canRead": true,
       "canUpdate": true,
@@ -818,7 +818,7 @@
     {
       "name": "ODataTest8Sub",
       "description": "Description.",
-      "dbSettingName": "oiyoUnitTestDb",
+      "dbSettingName": "mysql1",
       "canCreate": true,
       "canRead": true,
       "canUpdate": true,
@@ -862,7 +862,7 @@
     {
       "name": "ODataTest8SubSub",
       "description": "Description.",
-      "dbSettingName": "oiyoUnitTestDb",
+      "dbSettingName": "mysql1",
       "canCreate": true,
       "canRead": true,
       "canUpdate": true,

@@ -892,7 +892,7 @@
     {
       "name": "ODataTest9",
       "description": "Description.",
-      "dbSettingName": "oiyoUnitTestDb",
+      "dbSettingName": "postgres1",
       "canCreate": true,
       "canRead": true,
       "canUpdate": true,
