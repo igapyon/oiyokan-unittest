@@ -743,7 +743,7 @@
     {
       "name": "ODataTest8",
       "description": "Description.",
-      "dbSettingName": "oiyoUnitTestDb",
+      "dbSettingName": "mysql1",
       "canCreate": true,
       "canRead": true,
       "canUpdate": true,
@@ -776,9 +776,49 @@
       }
     },
     {
+      "name": "ODataTest9",
+      "description": "Description.",
+      "dbSettingName": "mysql1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "omitCountAll": false,
+      "jdbcStmtTimeout": 30,
+      "entityType": {
+        "name": "ODataTest9",
+        "dbName": "ODataTest9",
+        "keyName": [],
+        "property": [
+          {
+            "name": "Name",
+            "dbName": "Name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 80,
+            "dbDefault": "'Ubnormal test case. Without Primary Key.'",
+            "filterTreatNullAsBlank": true
+          },
+          {
+            "name": "Description",
+            "dbName": "Description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'Ubnormal test case. Without Primary Key.'",
+            "filterTreatNullAsBlank": true
+          }
+        ]
+      }
+    },
+    {
       "name": "ODataTest8Sub",
       "description": "Description.",
-      "dbSettingName": "oiyoUnitTestDb",
+      "dbSettingName": "mysql1",
       "canCreate": true,
       "canRead": true,
       "canUpdate": true,
@@ -822,7 +862,7 @@
     {
       "name": "ODataTest8SubSub",
       "description": "Description.",
-      "dbSettingName": "oiyoUnitTestDb",
+      "dbSettingName": "mysql1",
       "canCreate": true,
       "canRead": true,
       "canUpdate": true,

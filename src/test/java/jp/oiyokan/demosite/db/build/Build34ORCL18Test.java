@@ -43,6 +43,7 @@ class Build34ORCL18Test {
             "DROP TABLE ODataTest8", //
             "DROP TABLE ODataTest8Sub", //
             "DROP TABLE ODataTest8SubSub", //
+            "DROP TABLE ODataTest9", //
     };
 
     @Test
