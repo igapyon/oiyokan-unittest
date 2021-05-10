@@ -123,6 +123,12 @@ CREATE TABLE
     , PRIMARY KEY(MainKey,SubKey,SubSubKey)
   );
 
+CREATE TABLE IF NOT EXISTS
+  ODataTest9 (
+    Name VARCHAR(80) DEFAULT 'Ubnormal test case. Without Primary Key.'
+    , Description VARCHAR(250) DEFAULT 'Ubnormal test case. Without Primary Key.'
+  );
+
 INSERT INTO ODataTest1 (Name, Description) VALUES (
   'MacBookPro16,2', 'MacBook Pro (13-inch, 2020, Thunderbolt 3ポートx 4)');
 
