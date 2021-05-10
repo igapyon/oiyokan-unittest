@@ -43,6 +43,7 @@ class Build33Sqlsv2008Test {
             "DROP TABLE ODataTest8", //
             "DROP TABLE ODataTest8Sub", //
             "DROP TABLE ODataTest8SubSub", //
+            "DROP TABLE ODataTest9", //
     };
 
     @Test
