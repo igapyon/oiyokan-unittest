@@ -33,6 +33,17 @@ You can use Oiyokan to turn RDBMS into OData v4 services.
 - $top
 - $skip
 
+## Oiyokan in Maven repository
+
+- [Maven Repository - Oiyokan](https://mvnrepository.com/artifact/jp.igapyon.oiyokan)
+
+## Oiyokan 関連リポジトリ 
+
+- [Oiyokan Library - github](https://github.com/igapyon/oiyokan)
+- [Oiyokan Initializr - github](https://github.com/igapyon/oiyokan-initializr)
+- [Oiyokan Demosite - github](https://github.com/igapyon/oiyokan-demosite)
+- [Oiyokan Demosite-Test - github](https://github.com/igapyon/oiyokan-demosite-test)
+
 ## Sample implementation using Oiyokan
 
 - Oiyokan provides OData server sample of Sakila DVD rental.
@@ -71,12 +82,6 @@ src/main/resources/oiyokan/oiyokan-settings.json
 Spring Boot を再起動することにより設定情報の更新を反映。
 
 # Oiyokan 関連情報
-
-## Oiyokan 関連リポジトリ 
-
-- [Oiyokan 本体ライブラリ - github](https://github.com/igapyon/oiyokan)
-- [Oiyokan デモサイト - github](https://github.com/igapyon/oiyokan-demosite)
-- [Oiyokan デモサイトのテスト - github](https://github.com/igapyon/oiyokan-demosite-test)
 
 ## OData v4 server のサンプル(simple-odata4) を祖先
 
