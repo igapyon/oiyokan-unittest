@@ -32,7 +32,7 @@ import jp.oiyokan.oiyogen.OiyokanSettingsGenUtil;
 /**
  * 内部データベース用のCSDL用内部テーブルのDDLをコマンドライン生成.
  */
-class Gen12OiyokanUnittestDdlFromJsonTest {
+class Gen12OiyokanDdlFromJsonTest {
     @Test
     void test01() throws Exception {
         new File("./target/").mkdirs();

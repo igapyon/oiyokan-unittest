@@ -9,7 +9,7 @@
       "jdbcDriver": "org.h2.Driver",
       "jdbcUrl": "jdbc:h2:file:./src/main/resources/db/oiyokan-internal;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=FALSE;MODE=MSSQLServer",
       "jdbcUser": "sa",
-      "jdbcPass": ""
+      "jdbcPassPlain": ""
     },
     {
       "name": "postgres1",
@@ -18,7 +18,7 @@
       "jdbcDriver": "org.postgresql.Driver",
       "jdbcUrl": "jdbc:postgresql://localhost:5432/dvdrental",
       "jdbcUser": "",
-      "jdbcPass": ""
+      "jdbcPassPlain": ""
     }
   ],
   "entitySet": [
@@ -38,9 +38,9 @@
           {
             "name": "ID",
             "dbName": "ID",
-            "edmType": "Edm.Int64",
-            "jdbcType": "Types.BIGINT",
-            "dbType": "IDENTITY",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
             "autoGenKey": true,
             "nullable": true
           },
@@ -49,62 +49,62 @@
             "dbName": "Name",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 80,
-            "dbDefault": "'Types UnitTest'"
+            "dbDefault": "'NULLABLE UnitTest'::character varying"
           },
           {
             "name": "Description",
-            "dbName": "Description",
+            "dbName": "description",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 250
           },
           {
             "name": "Sbyte1",
-            "dbName": "Sbyte1",
-            "edmType": "Edm.SByte",
-            "jdbcType": "Types.TINYINT",
-            "dbType": "TINYINT",
+            "dbName": "sbyte1",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
             "nullable": true,
             "dbDefault": "127"
           },
           {
             "name": "Int16a",
-            "dbName": "Int16a",
+            "dbName": "int16a",
             "edmType": "Edm.Int16",
             "jdbcType": "Types.SMALLINT",
-            "dbType": "SMALLINT",
+            "dbType": "int2",
             "nullable": true,
             "dbDefault": "32767"
           },
           {
             "name": "Int32a",
-            "dbName": "Int32a",
+            "dbName": "int32a",
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
-            "dbType": "INTEGER",
+            "dbType": "int4",
             "nullable": true,
             "dbDefault": "2147483647"
           },
           {
             "name": "Int64a",
-            "dbName": "Int64a",
+            "dbName": "int64a",
             "edmType": "Edm.Int64",
             "jdbcType": "Types.BIGINT",
-            "dbType": "BIGINT",
+            "dbType": "int8",
             "nullable": true,
             "dbDefault": "2147483647"
           },
           {
             "name": "Decimal1",
-            "dbName": "Decimal1",
+            "dbName": "decimal1",
             "edmType": "Edm.Decimal",
-            "jdbcType": "Types.DECIMAL",
-            "dbType": "DECIMAL",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
             "nullable": true,
             "precision": 6,
             "scale": 2,
@@ -112,135 +112,134 @@
           },
           {
             "name": "StringChar8",
-            "dbName": "StringChar8",
+            "dbName": "stringchar8",
             "edmType": "Edm.String",
             "jdbcType": "Types.CHAR",
-            "dbType": "CHAR",
+            "dbType": "bpchar",
             "nullable": true,
             "maxLength": 8,
             "lengthFixed": true,
-            "dbDefault": "'CHAR_VAL'"
+            "dbDefault": "'CHAR_VAL'::bpchar"
           },
           {
             "name": "StringVar255",
-            "dbName": "StringVar255",
+            "dbName": "stringvar255",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 255,
-            "dbDefault": "'VARCHAR255'"
+            "dbDefault": "'VARCHAR255'::character varying"
           },
           {
             "name": "StringLongVar1",
-            "dbName": "StringLongVar1",
+            "dbName": "stringlongvar1",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
-            "dbDefault": "'LONGVARCHAR'"
+            "maxLength": 2000,
+            "dbDefault": "'LONGVARCHAR'::character varying"
           },
           {
             "name": "Clob1",
-            "dbName": "Clob1",
+            "dbName": "clob1",
             "edmType": "Edm.String",
-            "jdbcType": "Types.CLOB",
-            "dbType": "CLOB",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
             "nullable": true,
-            "dbDefault": "'CLOB'"
+            "dbDefault": "'CLOB'::text"
           },
           {
             "name": "Boolean1",
-            "dbName": "Boolean1",
+            "dbName": "boolean1",
             "edmType": "Edm.Boolean",
-            "jdbcType": "Types.BOOLEAN",
-            "dbType": "BOOLEAN",
+            "jdbcType": "Types.BIT",
+            "dbType": "bool",
             "nullable": true,
-            "dbDefault": "FALSE"
+            "dbDefault": "false"
           },
           {
             "name": "Single1",
-            "dbName": "Single1",
+            "dbName": "single1",
             "edmType": "Edm.Single",
             "jdbcType": "Types.REAL",
-            "dbType": "REAL",
+            "dbType": "float4",
             "nullable": true,
             "dbDefault": "123.45"
           },
           {
             "name": "Double1",
-            "dbName": "Double1",
+            "dbName": "double1",
             "edmType": "Edm.Double",
             "jdbcType": "Types.DOUBLE",
-            "dbType": "DOUBLE",
+            "dbType": "float8",
             "nullable": true,
             "dbDefault": "123.4567890123"
           },
           {
             "name": "Date1",
-            "dbName": "Date1",
+            "dbName": "date1",
             "edmType": "Edm.Date",
             "jdbcType": "Types.DATE",
-            "dbType": "DATE",
+            "dbType": "date",
             "nullable": true,
             "dbDefault": "CURRENT_DATE"
           },
           {
             "name": "DateTimeOffset1",
-            "dbName": "DateTimeOffset1",
+            "dbName": "datetimeoffset1",
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
-            "dbType": "TIMESTAMP",
+            "dbType": "timestamp",
             "nullable": true,
             "dbDefault": "CURRENT_TIMESTAMP"
           },
           {
             "name": "TimeOfDay1",
-            "dbName": "TimeOfDay1",
+            "dbName": "timeofday1",
             "edmType": "Edm.TimeOfDay",
             "jdbcType": "Types.TIME",
-            "dbType": "TIME",
+            "dbType": "time",
             "nullable": true,
             "dbDefault": "CURRENT_TIME"
           },
           {
             "name": "Binary1",
-            "dbName": "Binary1",
+            "dbName": "binary1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.VARBINARY",
-            "dbType": "VARBINARY",
-            "nullable": true,
-            "maxLength": 256,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcStream": true,
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "nullable": true
           },
           {
             "name": "VarBinary1",
-            "dbName": "VarBinary1",
+            "dbName": "varbinary1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.VARBINARY",
-            "dbType": "VARBINARY",
-            "nullable": true,
-            "maxLength": 256,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcStream": true,
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "nullable": true
           },
           {
             "name": "LongVarBinary1",
-            "dbName": "LongVarBinary1",
+            "dbName": "longvarbinary1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.VARBINARY",
-            "dbType": "VARBINARY",
-            "nullable": true,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcStream": true,
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "nullable": true
           },
           {
             "name": "Blob1",
-            "dbName": "Blob1",
+            "dbName": "blob1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.BLOB",
-            "dbType": "BLOB",
-            "nullable": true,
-            "maxLength": 128,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcType": "Types.BINARY",
+            "jdbcStream": true,
+            "dbType": "bytea",
+            "nullable": true
           }
         ]
       }
@@ -255,15 +254,15 @@
       "canDelete": true,
       "entityType": {
         "name": "ODataTest2",
-        "dbName": "ODataTest2",
+        "dbName": "odatatest2",
         "keyName": ["Decimal1", "StringChar8", "StringVar255"],
         "property": [
           {
             "name": "Decimal1",
-            "dbName": "Decimal1",
+            "dbName": "decimal1",
             "edmType": "Edm.Decimal",
-            "jdbcType": "Types.DECIMAL",
-            "dbType": "DECIMAL",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
             "nullable": false,
             "precision": 6,
             "scale": 2,
@@ -271,41 +270,41 @@
           },
           {
             "name": "StringChar8",
-            "dbName": "StringChar8",
+            "dbName": "stringchar8",
             "edmType": "Edm.String",
             "jdbcType": "Types.CHAR",
-            "dbType": "CHAR",
+            "dbType": "bpchar",
             "nullable": false,
             "maxLength": 8,
             "lengthFixed": true,
-            "dbDefault": "'CHAR_VAL'"
+            "dbDefault": "'CHAR_VAL'::bpchar"
           },
           {
             "name": "StringVar255",
-            "dbName": "StringVar255",
+            "dbName": "stringvar255",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": false,
             "maxLength": 255,
-            "dbDefault": "'VARCHAR255'"
+            "dbDefault": "'VARCHAR255'::character varying"
           },
           {
             "name": "Name",
-            "dbName": "Name",
+            "dbName": "name",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": false,
             "maxLength": 80,
-            "dbDefault": "'Multi-col UnitTest'"
+            "dbDefault": "'Multi-col UnitTest'::character varying"
           },
           {
             "name": "Description",
-            "dbName": "Description",
+            "dbName": "description",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 250
           }
@@ -322,80 +321,80 @@
       "canDelete": true,
       "entityType": {
         "name": "ODataTest3",
-        "dbName": "ODataTest3",
+        "dbName": "odatatest3",
         "keyName": ["ID"],
         "property": [
           {
             "name": "ID",
-            "dbName": "ID",
-            "edmType": "Edm.Int64",
-            "jdbcType": "Types.BIGINT",
-            "dbType": "IDENTITY",
+            "dbName": "id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
             "autoGenKey": true,
             "nullable": true
           },
           {
             "name": "Name",
-            "dbName": "Name",
+            "dbName": "name",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": false,
             "maxLength": 80,
-            "dbDefault": "'Types UnitTest with NOT NULL'"
+            "dbDefault": "'Types UnitTest'::character varying"
           },
           {
             "name": "Description",
-            "dbName": "Description",
+            "dbName": "description",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": false,
             "maxLength": 250,
-            "dbDefault": "'Types UnitTest table.'"
+            "dbDefault": "'Types UnitTest table.'::character varying"
           },
           {
             "name": "Sbyte1",
-            "dbName": "Sbyte1",
-            "edmType": "Edm.SByte",
-            "jdbcType": "Types.TINYINT",
-            "dbType": "TINYINT",
+            "dbName": "sbyte1",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
             "nullable": true,
             "dbDefault": "127"
           },
           {
             "name": "Int16a",
-            "dbName": "Int16a",
+            "dbName": "int16a",
             "edmType": "Edm.Int16",
             "jdbcType": "Types.SMALLINT",
-            "dbType": "SMALLINT",
+            "dbType": "int2",
             "nullable": true,
             "dbDefault": "32767"
           },
           {
             "name": "Int32a",
-            "dbName": "Int32a",
+            "dbName": "int32a",
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
-            "dbType": "INTEGER",
+            "dbType": "int4",
             "nullable": true,
             "dbDefault": "2147483647"
           },
           {
             "name": "Int64a",
-            "dbName": "Int64a",
+            "dbName": "int64a",
             "edmType": "Edm.Int64",
             "jdbcType": "Types.BIGINT",
-            "dbType": "BIGINT",
+            "dbType": "int8",
             "nullable": true,
             "dbDefault": "2147483647"
           },
           {
             "name": "Decimal1",
-            "dbName": "Decimal1",
+            "dbName": "decimal1",
             "edmType": "Edm.Decimal",
-            "jdbcType": "Types.DECIMAL",
-            "dbType": "DECIMAL",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
             "nullable": true,
             "precision": 6,
             "scale": 2,
@@ -403,135 +402,134 @@
           },
           {
             "name": "StringChar8",
-            "dbName": "StringChar8",
+            "dbName": "stringchar8",
             "edmType": "Edm.String",
             "jdbcType": "Types.CHAR",
-            "dbType": "CHAR",
+            "dbType": "bpchar",
             "nullable": true,
             "maxLength": 8,
             "lengthFixed": true,
-            "dbDefault": "'CHAR_VAL'"
+            "dbDefault": "'CHAR_VAL'::bpchar"
           },
           {
             "name": "StringVar255",
-            "dbName": "StringVar255",
+            "dbName": "stringvar255",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 255,
-            "dbDefault": "'VARCHAR255'"
+            "dbDefault": "'VARCHAR255'::character varying"
           },
           {
             "name": "StringLongVar1",
-            "dbName": "StringLongVar1",
+            "dbName": "stringlongvar1",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
-            "dbDefault": "'LONGVARCHAR'"
+            "maxLength": 2000,
+            "dbDefault": "'LONGVARCHAR'::character varying"
           },
           {
             "name": "Clob1",
-            "dbName": "Clob1",
+            "dbName": "clob1",
             "edmType": "Edm.String",
-            "jdbcType": "Types.CLOB",
-            "dbType": "CLOB",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
             "nullable": true,
-            "dbDefault": "'CLOB'"
+            "dbDefault": "'CLOB'::text"
           },
           {
             "name": "Boolean1",
-            "dbName": "Boolean1",
+            "dbName": "boolean1",
             "edmType": "Edm.Boolean",
-            "jdbcType": "Types.BOOLEAN",
-            "dbType": "BOOLEAN",
+            "jdbcType": "Types.BIT",
+            "dbType": "bool",
             "nullable": false,
-            "dbDefault": "FALSE"
+            "dbDefault": "false"
           },
           {
             "name": "Single1",
-            "dbName": "Single1",
+            "dbName": "single1",
             "edmType": "Edm.Single",
             "jdbcType": "Types.REAL",
-            "dbType": "REAL",
+            "dbType": "float4",
             "nullable": true,
             "dbDefault": "123.456789"
           },
           {
             "name": "Double1",
-            "dbName": "Double1",
+            "dbName": "double1",
             "edmType": "Edm.Double",
             "jdbcType": "Types.DOUBLE",
-            "dbType": "DOUBLE",
+            "dbType": "float8",
             "nullable": true,
             "dbDefault": "123.4567890123"
           },
           {
             "name": "Date1",
-            "dbName": "Date1",
+            "dbName": "date1",
             "edmType": "Edm.Date",
             "jdbcType": "Types.DATE",
-            "dbType": "DATE",
+            "dbType": "date",
             "nullable": false,
             "dbDefault": "CURRENT_DATE"
           },
           {
             "name": "DateTimeOffset1",
-            "dbName": "DateTimeOffset1",
+            "dbName": "datetimeoffset1",
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
-            "dbType": "TIMESTAMP",
+            "dbType": "timestamp",
             "nullable": false,
             "dbDefault": "CURRENT_TIMESTAMP"
           },
           {
             "name": "TimeOfDay1",
-            "dbName": "TimeOfDay1",
+            "dbName": "timeofday1",
             "edmType": "Edm.TimeOfDay",
             "jdbcType": "Types.TIME",
-            "dbType": "TIME",
+            "dbType": "time",
             "nullable": true,
             "dbDefault": "CURRENT_TIME"
           },
           {
             "name": "Binary1",
-            "dbName": "Binary1",
+            "dbName": "binary1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.VARBINARY",
-            "dbType": "VARBINARY",
-            "nullable": true,
-            "maxLength": 256,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
           },
           {
             "name": "VarBinary1",
-            "dbName": "VarBinary1",
+            "dbName": "varbinary1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.VARBINARY",
-            "dbType": "VARBINARY",
-            "nullable": true,
-            "maxLength": 256,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
           },
           {
             "name": "LongVarBinary1",
-            "dbName": "LongVarBinary1",
+            "dbName": "longvarbinary1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.VARBINARY",
-            "dbType": "VARBINARY",
-            "nullable": true,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
           },
           {
             "name": "Blob1",
-            "dbName": "Blob1",
+            "dbName": "blob1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.BLOB",
-            "dbType": "BLOB",
-            "nullable": true,
-            "maxLength": 128,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
           }
         ]
       }
@@ -554,7 +552,7 @@
             "dbName": "I D",
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
-            "dbType": "INTEGER",
+            "dbType": "int4",
             "nullable": false
           },
           {
@@ -562,20 +560,20 @@
             "dbName": "Na me",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": false,
             "maxLength": 80,
-            "dbDefault": "'Column name w/space UnitTest'"
+            "dbDefault": "'Column name w/space UnitTest'::character varying"
           },
           {
             "name": "Va_lue1",
             "dbName": "Va lue1",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 255,
-            "dbDefault": "'VALUEVALUE12345'"
+            "dbDefault": "'VALUEVALUE12345'::character varying"
           }
         ]
       }
@@ -590,37 +588,37 @@
       "canDelete": true,
       "entityType": {
         "name": "ODataTest5",
-        "dbName": "ODataTest5",
+        "dbName": "odatatest5",
         "keyName": ["Iden1"],
         "property": [
           {
             "name": "Iden1",
-            "dbName": "Iden1",
-            "edmType": "Edm.Int64",
-            "jdbcType": "Types.BIGINT",
-            "dbType": "IDENTITY",
+            "dbName": "iden1",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
             "autoGenKey": true,
             "nullable": true
           },
           {
             "name": "Name",
-            "dbName": "Name",
+            "dbName": "name",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 80,
-            "dbDefault": "'IDENTITY UnitTest'"
+            "dbDefault": "'IDENTITY UnitTest'::character varying"
           },
           {
             "name": "Value1",
-            "dbName": "Value1",
+            "dbName": "value1",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 255,
-            "dbDefault": "'VALUEVALUE12345'"
+            "dbDefault": "'VALUEVALUE12345'::character varying"
           }
         ]
       }
@@ -635,76 +633,73 @@
       "canDelete": true,
       "entityType": {
         "name": "ODataTest6",
-        "dbName": "ODataTest6",
+        "dbName": "odatatest6",
         "keyName": ["ID"],
         "property": [
           {
             "name": "ID",
-            "dbName": "ID",
-            "edmType": "Edm.Int64",
-            "jdbcType": "Types.BIGINT",
-            "dbType": "IDENTITY",
+            "dbName": "id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
             "autoGenKey": true,
             "nullable": true
           },
           {
             "name": "Name",
-            "dbName": "Name",
+            "dbName": "name",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 80,
-            "dbDefault": "'Binary UnitTest'"
+            "dbDefault": "'Binary UnitTest'::character varying"
           },
           {
             "name": "Description",
-            "dbName": "Description",
+            "dbName": "description",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 250,
-            "dbDefault": "'Binary UnitTest table.'"
+            "dbDefault": "'Binary UnitTest table.'::character varying"
           },
           {
             "name": "Binary1",
-            "dbName": "Binary1",
+            "dbName": "binary1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.VARBINARY",
-            "dbType": "VARBINARY",
-            "nullable": true,
-            "maxLength": 256,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
           },
           {
             "name": "VarBinary1",
-            "dbName": "VarBinary1",
+            "dbName": "varbinary1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.VARBINARY",
-            "dbType": "VARBINARY",
-            "nullable": true,
-            "maxLength": 256,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
           },
           {
             "name": "LongVarBinary1",
-            "dbName": "LongVarBinary1",
+            "dbName": "longvarbinary1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.VARBINARY",
-            "dbType": "VARBINARY",
-            "nullable": true,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
           },
           {
             "name": "Blob1",
-            "dbName": "Blob1",
+            "dbName": "blob1",
             "edmType": "Edm.Binary",
-            "jdbcType": "Types.BLOB",
-            "dbType": "BLOB",
-            "nullable": true,
-            "maxLength": 128,
-            "dbDefault": "X'48656c6c6f20776f726c6421'"
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
           }
         ]
       }
@@ -719,45 +714,45 @@
       "canDelete": true,
       "entityType": {
         "name": "ODataTest7",
-        "dbName": "ODataTest7",
+        "dbName": "odatatest7",
         "keyName": ["ID"],
         "property": [
           {
             "name": "ID",
-            "dbName": "ID",
+            "dbName": "id",
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
-            "dbType": "INTEGER",
+            "dbType": "int4",
             "nullable": false
           },
           {
             "name": "Name",
-            "dbName": "Name",
+            "dbName": "name",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 80,
-            "dbDefault": "'UUID UnitTest'"
+            "dbDefault": "'UUID UnitTest'::character varying"
           },
           {
             "name": "Description",
-            "dbName": "Description",
+            "dbName": "description",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
+            "dbType": "varchar",
             "nullable": true,
             "maxLength": 250,
-            "dbDefault": "'UUID UnitTest table.'"
+            "dbDefault": "'UUID UnitTest table.'::character varying"
           },
           {
             "name": "Uuid1",
-            "dbName": "Uuid1",
-            "edmType": "Edm.Guid",
+            "dbName": "uuid1",
+            "edmType": "Edm.Binary",
             "jdbcType": "Types.BINARY",
-            "dbType": "UUID",
+            "dbType": "uuid",
             "nullable": true,
-            "dbDefault": "RANDOM_UUID()"
+            "dbDefault": "gen_random_uuid()"
           }
         ]
       }
@@ -895,36 +890,30 @@
       }
     },
     {
-      "name": "ODataTestFulls1s",
+      "name": "ODataTest9",
       "description": "Description.",
-      "dbSettingName": "oiyoUnitTestDb",
+      "dbSettingName": "postgres1",
       "canCreate": true,
       "canRead": true,
       "canUpdate": true,
       "canDelete": true,
+      "omitCountAll": false,
+      "jdbcStmtTimeout": 30,
       "entityType": {
-        "name": "ODataTestFulls1",
-        "dbName": "ODataTestFulls1",
-        "keyName": ["ID"],
+        "name": "ODataTest9",
+        "dbName": "ODataTest9",
+        "keyName": [],
         "property": [
-          {
-            "name": "ID",
-            "dbName": "ID",
-            "edmType": "Edm.Int64",
-            "jdbcType": "Types.BIGINT",
-            "dbType": "IDENTITY",
-            "autoGenKey": true,
-            "nullable": true
-          },
           {
             "name": "Name",
             "dbName": "Name",
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "VARCHAR",
-            "nullable": false,
+            "nullable": true,
             "maxLength": 80,
-            "dbDefault": "'Fulltext UnitTest (Experimental)'"
+            "dbDefault": "'Ubnormal test case. Without Primary Key.'",
+            "filterTreatNullAsBlank": true
           },
           {
             "name": "Description",
@@ -933,129 +922,9 @@
             "jdbcType": "Types.VARCHAR",
             "dbType": "VARCHAR",
             "nullable": true,
-            "maxLength": 250
-          },
-          {
-            "name": "Sbyte1",
-            "dbName": "Sbyte1",
-            "edmType": "Edm.SByte",
-            "jdbcType": "Types.TINYINT",
-            "dbType": "TINYINT",
-            "nullable": true,
-            "dbDefault": "127"
-          },
-          {
-            "name": "Int16a",
-            "dbName": "Int16a",
-            "edmType": "Edm.Int16",
-            "jdbcType": "Types.SMALLINT",
-            "dbType": "SMALLINT",
-            "nullable": true,
-            "dbDefault": "32767"
-          },
-          {
-            "name": "Int32a",
-            "dbName": "Int32a",
-            "edmType": "Edm.Int32",
-            "jdbcType": "Types.INTEGER",
-            "dbType": "INTEGER",
-            "nullable": true,
-            "dbDefault": "2147483647"
-          },
-          {
-            "name": "Int64a",
-            "dbName": "Int64a",
-            "edmType": "Edm.Int64",
-            "jdbcType": "Types.BIGINT",
-            "dbType": "BIGINT",
-            "nullable": true,
-            "dbDefault": "2147483647"
-          },
-          {
-            "name": "Decimal1",
-            "dbName": "Decimal1",
-            "edmType": "Edm.Decimal",
-            "jdbcType": "Types.DECIMAL",
-            "dbType": "DECIMAL",
-            "nullable": true,
-            "precision": 6,
-            "scale": 2,
-            "dbDefault": "1234.56"
-          },
-          {
-            "name": "StringChar8",
-            "dbName": "StringChar8",
-            "edmType": "Edm.String",
-            "jdbcType": "Types.CHAR",
-            "dbType": "CHAR",
-            "nullable": true,
-            "maxLength": 8,
-            "lengthFixed": true,
-            "dbDefault": "'CHAR_VAL'"
-          },
-          {
-            "name": "StringVar255",
-            "dbName": "StringVar255",
-            "edmType": "Edm.String",
-            "jdbcType": "Types.VARCHAR",
-            "dbType": "VARCHAR",
-            "nullable": true,
-            "maxLength": 255,
-            "dbDefault": "'VARCHAR255'"
-          },
-          {
-            "name": "Boolean1",
-            "dbName": "Boolean1",
-            "edmType": "Edm.Boolean",
-            "jdbcType": "Types.BOOLEAN",
-            "dbType": "BOOLEAN",
-            "nullable": false,
-            "dbDefault": "FALSE"
-          },
-          {
-            "name": "Single1",
-            "dbName": "Single1",
-            "edmType": "Edm.Single",
-            "jdbcType": "Types.REAL",
-            "dbType": "REAL",
-            "nullable": true,
-            "dbDefault": "123.456789"
-          },
-          {
-            "name": "Double1",
-            "dbName": "Double1",
-            "edmType": "Edm.Double",
-            "jdbcType": "Types.DOUBLE",
-            "dbType": "DOUBLE",
-            "nullable": true,
-            "dbDefault": "123.4567890123"
-          },
-          {
-            "name": "Date1",
-            "dbName": "Date1",
-            "edmType": "Edm.Date",
-            "jdbcType": "Types.DATE",
-            "dbType": "DATE",
-            "nullable": false,
-            "dbDefault": "CURRENT_DATE"
-          },
-          {
-            "name": "DateTimeOffset1",
-            "dbName": "DateTimeOffset1",
-            "edmType": "Edm.DateTimeOffset",
-            "jdbcType": "Types.TIMESTAMP",
-            "dbType": "TIMESTAMP",
-            "nullable": false,
-            "dbDefault": "CURRENT_TIMESTAMP"
-          },
-          {
-            "name": "TimeOfDay1",
-            "dbName": "TimeOfDay1",
-            "edmType": "Edm.TimeOfDay",
-            "jdbcType": "Types.TIME",
-            "dbType": "TIME",
-            "nullable": true,
-            "dbDefault": "CURRENT_TIME"
+            "maxLength": 250,
+            "dbDefault": "'Ubnormal test case. Without Primary Key.'",
+            "filterTreatNullAsBlank": true
           }
         ]
       }
@@ -1079,8 +948,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('actor_actor_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "first_name",
@@ -1157,6 +1026,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           }
         ]
@@ -1181,8 +1051,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('address_address_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "address",
@@ -1268,8 +1138,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('category_category_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "name",
@@ -1311,8 +1181,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('city_city_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "city",
@@ -1362,8 +1232,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('country_country_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "country",
@@ -1405,8 +1275,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('customer_customer_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "store_id",
@@ -1516,6 +1386,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           },
           {
@@ -1569,6 +1440,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           },
           {
@@ -1601,8 +1473,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('film_film_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "title",
@@ -1619,6 +1491,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           },
           {
@@ -1712,7 +1585,7 @@
           }
         ]
       }
-    },
+    },    
     {
       "name": "SklFilmActors",
       "description": "Description.",
@@ -1831,6 +1704,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           },
           {
@@ -1874,6 +1748,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           }
         ]
@@ -1898,8 +1773,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('inventory_inventory_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "film_id",
@@ -1948,8 +1823,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('language_language_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "name",
@@ -2009,6 +1884,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           },
           {
@@ -2052,6 +1928,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           }
         ]
@@ -2076,8 +1953,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('payment_payment_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "customer_id",
@@ -2143,8 +2020,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('rental_rental_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "rental_date",
@@ -2226,8 +2103,8 @@
             "edmType": "Edm.Decimal",
             "jdbcType": "Types.NUMERIC",
             "dbType": "numeric",
-            "precision": 2147483647,
-            "scale": 2147483647,
+            "precision": 12,
+            "scale": 2,
             "nullable": true
           }
         ]
@@ -2252,6 +2129,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           },
           {
@@ -2260,6 +2138,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           },
           {
@@ -2268,8 +2147,8 @@
             "edmType": "Edm.Decimal",
             "jdbcType": "Types.NUMERIC",
             "dbType": "numeric",
-            "precision": 2147483647,
-            "scale": 2147483647,
+            "precision": 12,
+            "scale": 2,
             "nullable": true
           }
         ]
@@ -2294,8 +2173,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('staff_staff_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "first_name",
@@ -2414,6 +2293,7 @@
             "edmType": "Edm.String",
             "jdbcType": "Types.VARCHAR",
             "dbType": "text",
+            "jdbcStream": true,
             "nullable": true
           },
           {
@@ -2491,8 +2371,8 @@
             "edmType": "Edm.Int32",
             "jdbcType": "Types.INTEGER",
             "dbType": "serial",
-            "nullable": false,
-            "dbDefault": "nextval('store_store_id_seq'::regclass)"
+            "autoGenKey": true,
+            "nullable": true
           },
           {
             "name": "manager_staff_id",

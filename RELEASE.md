@@ -1,3 +1,95 @@
+# Release 1.14 (2021-05-10)
+
+## EN
+
+- Fixed search under Entity without Key (table without Primary Key).
+
+## JA
+
+- Key の存在しないEntity (Primary Key のないテーブル) でも検索が正しく動作するよう変更。
+
+# Release 1.13 (2021-05-09)
+
+## EN
+
+- Create a new `oiyokan-initializr` project that allows you to edit the Oiyokan configuration file on the web screen.
+- Add `java.io.Serializable` to DTO of setting information
+
+## JA
+
+- Oiyokan 設定ファイルを Web 画面で編集できる `oiyokan-initializr` プロジェクトを新規作成
+- 設定情報の DTO に `java.io.Serializable` を付与
+
+# Release 1.12 (2021-05-06)
+
+v1.x Testing.
+
+## EN
+
+- Stabilization work of software v1.x.
+- Fixed a bug that the DB cursor was not closed in some case.
+- Created a new project oiyokan-initializr for Getting Started.
+- Deployed the oiyokan library to Maven Repository.
+- Changed mvn to work with en.
+- Changed Javadoc to be generated with en.
+- Changed to output cache control meta to http response.
+
+## JA
+
+- v1.x ソフトウェア安定化作業
+- DBカーソルのクローズ漏れバグがあったのを訂正
+- Getting Started 用のプロジェクト oiyokan-initializr を新規作成
+- Maven Repository にデプロイ
+- mvn を en で動作するように変更
+- Javadocを en で生成するように変更
+- キャッシュコントロール記述をレスポンスに出力するよう変更
+
+# Release 1.11 (2021-05-02)
+
+v1.x Feature freeze.
+
+## EN
+
+- Changed Oiyokan Library to be independent of Spring Boot.
+- Added DB connection password encryption function.
+- Changed to set ID in Entity search.
+- Check / change group id to prepare Maven Repository registration.
+- Standardizing the processing related to time and re-tested.
+- Implemented CLOB, BLOB judgment processing and implement behavior switching.
+- Checked SQL Server BIT type support.
+- Confirmed that the request body is not output to the log by log.trace.
+- Confirmed that no garbage records remain in the unit test.
+- Conducted source code coverage test.
+- Bug fixes.
+
+## JA
+
+- Oiyokan Library が Spring Boot に依存しないよう変更。
+- DB接続パスワードの暗号化機能を追加。
+- Entityの検索で IDを設定する。
+- Maven Repository 登録を意識して group id を確認・変更。
+- 時間に関する処理を共通化したうえでテストを実施。
+- CLOB、BLOB判定処理および指定に伴う挙動変更を実装。
+- SQL Server の BIT 型の対応確認。
+- log.traceにて リクエストボディがログに出力されないよう確認。
+- 単体テストでゴミレコードが残らないよう確認。
+- ソースコードカバレッジテストの実施。
+- その他バグ修正
+
+# Release 1.10 (2021-04-30)
+
+## EN
+
+- Previously, 204 and 304 were returned when PATCH was executed, but this has been changed to return as 200 or 201 with body data.
+- Changed the log format during Unit test to a shorter one.
+- An error occurs when a value other than * (ie: ETag) is specified for If-Match and If-None-Match.
+
+## JA
+
+- PATCH実行時に、いままでは 204 や 304 を返却していたが、これをデータ付きの 200 や 201 で戻すように変更。
+- Unit test 時の ログ format を短いものに変更。
+- If-Match, If-None-Match に * 以外(ETag) が指定された場合にエラーにする。
+
 # Release 1.9 (2021-04-29)
 
 ## EN

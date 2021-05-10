@@ -62,7 +62,7 @@ class Build00H2InterDbTest {
         }
 
         final OiyoInfo oiyoInfo = new OiyoInfo();
-        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings());
+        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings(oiyoInfo));
 
         for (String[] sqlFileDef : OIYOKAN_FILE_SQLS) {
             log.info("OData: load: internal db:" + sqlFileDef[0] + ", sql: " + sqlFileDef[1]);
@@ -70,7 +70,7 @@ class Build00H2InterDbTest {
             OiyoSettingsDatabase lookDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, sqlFileDef[0]);
 
             try (Connection connLoookDatabase = OiyoCommonJdbcUtil.getConnection(lookDatabase)) {
-                final String[] sqls = OiyokanResourceSqlUtil.loadOiyokanResourceSql("oiyokan/sql/" + sqlFileDef[1]);
+                final String[] sqls = OiyokanResourceSqlUtil.loadOiyokanResourceSql("/oiyokan/sql/" + sqlFileDef[1]);
                 for (String sql : sqls) {
                     try (var stmt = connLoookDatabase.prepareStatement(sql.trim())) {
                         stmt.executeUpdate();

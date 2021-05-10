@@ -100,6 +100,13 @@ CREATE TABLE IF NOT EXISTS
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE IF NOT EXISTS
+  ODataTest8 (
+    MainKey VARCHAR(20) NOT NULL
+    , Description VARCHAR(250) DEFAULT 'Main table'
+    , PRIMARY KEY(MainKey)
+  );
+
+CREATE TABLE IF NOT EXISTS
   ODataTest8Sub (
     MainKey VARCHAR(20) NOT NULL
     , SubKey VARCHAR(20) NOT NULL
@@ -114,6 +121,12 @@ CREATE TABLE IF NOT EXISTS
     , SubSubKey VARCHAR(20) NOT NULL
     , Description VARCHAR(250) DEFAULT 'Sub sub table'
     , PRIMARY KEY(MainKey,SubKey,SubSubKey)
+  );
+
+CREATE TABLE IF NOT EXISTS
+  ODataTest9 (
+    Name VARCHAR(80) DEFAULT 'Ubnormal test case. Without Primary Key.'
+    , Description VARCHAR(250) DEFAULT 'Ubnormal test case. Without Primary Key.'
   );
 
 INSERT INTO ODataTest1 (Name, Description) VALUES (

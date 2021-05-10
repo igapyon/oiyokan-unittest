@@ -43,6 +43,7 @@ class Build32MySQLTest {
             "DROP TABLE ODataTest8", //
             "DROP TABLE ODataTest8Sub", //
             "DROP TABLE ODataTest8SubSub", //
+            "DROP TABLE ODataTest9", //
     };
 
     @Test
@@ -51,7 +52,7 @@ class Build32MySQLTest {
             return;
 
         final OiyoInfo oiyoInfo = new OiyoInfo();
-        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings());
+        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings(oiyoInfo));
 
         OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, "mysql1");
 
@@ -64,7 +65,8 @@ class Build32MySQLTest {
                 }
             }
 
-            String[] sqls = OiyokanResourceSqlUtil.loadOiyokanResourceSql("oiyokan/sql/" + "oiyokan-test-db-MySQL.sql");
+            String[] sqls = OiyokanResourceSqlUtil
+                    .loadOiyokanResourceSql("/oiyokan/sql/" + "oiyokan-test-db-MySQL.sql");
             for (String sql : sqls) {
                 if (sql.trim().length() == 0) {
                     continue;

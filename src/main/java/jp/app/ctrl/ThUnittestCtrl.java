@@ -9,20 +9,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.oiyokan.OiyokanConstants;
-import jp.oiyokan.OiyokanOdata4Register;
+import jp.oiyokan.demosite.OiyokanOdata4Register;
 
 @Controller
 public class ThUnittestCtrl {
     public static final String[][] ODATA_ENTRY_INFOS = new String[][] { //
             { "root", "/", "Root of OData v4 server." },
-            { "version", "/Oiyokans?$format=JSON", "Show Oiyokan settings and version." },
+            { "version", "/Oiyokan?$format=JSON", "Show Oiyokan settings and version." },
             { "$metadata", "/$metadata", "Metadata of this OData." },
-            { "ODataTests1 : $orderby", "/ODataTests1?$orderby=ID&$top=20&$count=true",
+            { "ODataTest1 : $orderby", "/ODataTest1?$orderby=ID&$top=20&$count=true",
                     "Sample of sort using $orderby." },
-            { "ODataTests1 : $filter",
-                    "/ODataTests1?$top=2001&$filter=Description eq 'MacBook Pro (13-inch, 2020, Thunderbolt 3ポートx 4)' and ID eq 1.0&$count=true&$select=ID,Name",
+            { "ODataTest1 : $filter",
+                    "/ODataTest1?$top=2001&$filter=Description eq 'MacBook Pro (13-inch, 2020, Thunderbolt 3ポートx 4)' and ID eq 1.0&$count=true&$select=ID,Name",
                     "Sample of matching using $filter." },
-            { "ODataTests1 : $search (Experimental)", "/ODataTestFulls1?$top=6&$search=macbook&$count=true&$select=ID",
+            { "ODataTest1 : $search (Experimental)", "/ODataTestFulls1?$top=6&$search=macbook&$count=true&$select=ID",
                     "Full text search test (Experimental)." }, };
 
     @RequestMapping("/unittest.html")

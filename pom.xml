@@ -10,9 +10,9 @@
 		<relativePath />
 	</parent>
 
-	<groupId>jp.oiyokan</groupId>
+	<groupId>jp.igapyon.oiyokan</groupId>
 	<artifactId>oiyokan-demosite</artifactId>
-	<version>1.9.20210429b</version>
+	<version>1.14.20210510a</version>
 	<name>oiyokan-demosite</name>
 	<description>Oiyokan is a simple OData v4 Server. (based on Apache
 		Olingo / Spring Boot / h2 database)</description>
@@ -84,9 +84,9 @@
 	<dependencies>
 		<!-- Oiyokan Library -->
 		<dependency>
-			<groupId>jp.oiyokan</groupId>
+			<groupId>jp.igapyon.oiyokan</groupId>
 			<artifactId>oiyokan</artifactId>
-			<version>1.9.20210429b</version>
+			<version>1.14.20210510a</version>
 		</dependency>
 
 		<dependency>
@@ -131,7 +131,7 @@
 
 
 
-		<!-- From oiyokan : DUP -->
+		<!-- From oiyokan : for url : file:./repo : DUP -->
 		<!-- https://mvnrepository.com/artifact/org.apache.olingo/odata-server-api -->
 		<dependency>
 			<groupId>org.apache.olingo</groupId>
@@ -169,7 +169,7 @@
 			<artifactId>h2</artifactId>
 			<version>1.4.200</version>
 		</dependency>
-		<!-- From oiyokan : DUP -->
+		<!-- From oiyokan : for url : file:./repo : DUP -->
 
 	</dependencies>
 

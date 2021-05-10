@@ -86,8 +86,7 @@ class SakilaValueNullTest {
             return;
 
         // NOT EQUAL NULL の件数をカウント.
-        final ODataResponse resp = OiyokanTestUtil
-                .callGet( //
+        final ODataResponse resp = OiyokanTestUtil.callGet( //
                 "/SklAddresses", OiyoUrlUtil.encodeUrlQuery( //
                         "$top=1 &$count=true &$filter=address2 ne null &$select=address_id &$orderby=address_id"));
         final String result = OiyokanTestUtil.stream2String(resp.getContent());

@@ -43,6 +43,7 @@ class Build33Sqlsv2008Test {
             "DROP TABLE ODataTest8", //
             "DROP TABLE ODataTest8Sub", //
             "DROP TABLE ODataTest8SubSub", //
+            "DROP TABLE ODataTest9", //
     };
 
     @Test
@@ -51,7 +52,7 @@ class Build33Sqlsv2008Test {
             return;
 
         final OiyoInfo oiyoInfo = new OiyoInfo();
-        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings());
+        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings(oiyoInfo));
 
         OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, "mssql1");
 
@@ -65,7 +66,7 @@ class Build33Sqlsv2008Test {
             }
 
             String[] sqls = OiyokanResourceSqlUtil
-                    .loadOiyokanResourceSql("oiyokan/sql/" + "oiyokan-test-db-SQLSV2008.sql");
+                    .loadOiyokanResourceSql("/oiyokan/sql/" + "oiyokan-test-db-SQLSV2008.sql");
             for (String sql : sqls) {
                 try (var stmt = connTargetDb.prepareStatement(sql)) {
                     System.err.println(sql);
@@ -81,13 +82,13 @@ class Build33Sqlsv2008Test {
     // @Test
     void test02() throws Exception {
         final OiyoInfo oiyoInfo = new OiyoInfo();
-        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings());
+        oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings(oiyoInfo));
 
         OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, "mssql1");
 
         try (Connection connTargetDb = OiyoCommonJdbcUtil.getConnection(settingsDatabase)) {
             String[] sqls = OiyokanResourceSqlUtil
-                    .loadOiyokanResourceSql("oiyokan/sql/" + "sample-sakila-db-SQLSV2008.sql");
+                    .loadOiyokanResourceSql("/oiyokan/sql/" + "sample-sakila-db-SQLSV2008.sql");
             for (String sql : sqls) {
                 try (var stmt = connTargetDb.prepareStatement(sql)) {
                     System.err.println(sql);

@@ -42,8 +42,7 @@ class SakilaActualFailCaseTest {
         OiyoSettingsDatabase database = OiyoInfoUtil.getOiyoDatabaseByEntitySetName(oiyoInfo, "ODataTest1");
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
 
-        final ODataResponse resp = OiyokanTestUtil
-                .callGet( //
+        final ODataResponse resp = OiyokanTestUtil.callGet( //
                 "/SklFilmActors", OiyoUrlUtil.encodeUrlQuery( //
                         "$top=2001 &$filter=actor_id eq 1 and film_id eq 140 &$count=true &$select=actor_id,film_id,last_update"));
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
