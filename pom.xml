@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>jp.igapyon.oiyokan</groupId>
-	<artifactId>oiyokan-demosite</artifactId>
+	<artifactId>oiyokan-unittest</artifactId>
 	<version>1.14.20210510a</version>
-	<name>oiyokan-demosite</name>
+	<name>oiyokan-unittest</name>
 	<description>Oiyokan is a simple OData v4 Server. (based on Apache
 		Olingo / Spring Boot / h2 database)</description>
 	<url>https://github.com/igapyon/oiyokan</url>
@@ -28,9 +28,9 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/igapyon/oiyokan-demosite</url>
-		<connection>scm:git:https://github.com/igapyon/oiyokan-demosite.git</connection>
-		<developerConnection>scm:git:https://github.com/igapyon/oiyokan-demosite.git</developerConnection>
+		<url>https://github.com/igapyon/oiyokan-unittest</url>
+		<connection>scm:git:https://github.com/igapyon/oiyokan-unittest.git</connection>
+		<developerConnection>scm:git:https://github.com/igapyon/oiyokan-unittest.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
