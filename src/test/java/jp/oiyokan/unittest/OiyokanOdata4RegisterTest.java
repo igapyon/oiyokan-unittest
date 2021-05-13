@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite;
+package jp.oiyokan.unittest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -22,6 +22,7 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
 import jp.oiyokan.OiyokanConstants;
+import jp.oiyokan.unittest.OiyokanOdata4Register;
 
 /**
  * Olingoとして一番上位に該当する OiyokanOdata4Register からの動作確認。

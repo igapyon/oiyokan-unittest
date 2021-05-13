@@ -7,8 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.oiyokan.OiyokanConstants;
-import jp.oiyokan.demosite.OiyokanDemositeConstants;
-import jp.oiyokan.demosite.OiyokanOdata4Register;
+import jp.oiyokan.unittest.OiyokanUnittestConstants;
+import jp.oiyokan.unittest.OiyokanOdata4Register;
 
 @Controller
 public class ThIndexCtrl {
@@ -27,8 +27,8 @@ public class ThIndexCtrl {
             return OiyokanConstants.VERSION;
         }
 
-        public String getDemositeVersion() {
-            return OiyokanDemositeConstants.VERSION;
+        public String getUnittestVersion() {
+            return OiyokanUnittestConstants.VERSION;
         }
     }
 }

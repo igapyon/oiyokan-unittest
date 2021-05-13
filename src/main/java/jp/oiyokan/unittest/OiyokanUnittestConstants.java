@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite;
+package jp.oiyokan.unittest;
 
 /**
- * Oiyokan Demosite の定数.
+ * Oiyokan UnitTest の定数.
  */
-public class OiyokanDemositeConstants {
+public class OiyokanUnittestConstants {
     public static final String VERSION = "1.14.20210510a";
 }

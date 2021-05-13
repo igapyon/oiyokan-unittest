@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite.db.build;
+package jp.oiyokan.unittest.db.build;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -27,9 +27,11 @@ import jp.oiyokan.data.OiyokanResourceSqlUtil;
 import jp.oiyokan.dto.OiyoSettingsDatabase;
 
 /**
- * テスト用の内部データベースを作成します。この内部データベースは動作の上で必要です。
+ * テスト用の Postgres Test データベースを作成します。
+ * 
+ * Postgres での単体テスト実施時に利用します。
  */
-class Build34ORCL18Test {
+class Build31PostgresTest {
     private static final boolean IS_RUN_THISMETHOD = false;
 
     private static final String[] DROP_TABLE_SQLS = new String[] { //
@@ -54,7 +56,7 @@ class Build34ORCL18Test {
         final OiyoInfo oiyoInfo = new OiyoInfo();
         oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings(oiyoInfo));
 
-        OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, "oracle1");
+        OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, "postgres1");
 
         try (Connection connTargetDb = OiyoCommonJdbcUtil.getConnection(settingsDatabase)) {
             for (String sql : DROP_TABLE_SQLS) {
@@ -65,14 +67,8 @@ class Build34ORCL18Test {
                 }
             }
 
-            try (var stmt = connTargetDb.prepareStatement("DROP TABLE ODataTest1")) {
-                stmt.executeUpdate();
-            } catch (SQLException ex) {
-                System.err.println(ex.toString());
-            }
-
             String[] sqls = OiyokanResourceSqlUtil
-                    .loadOiyokanResourceSql("/oiyokan/sql/" + "oiyokan-test-db-ORCL18.sql");
+                    .loadOiyokanResourceSql("/oiyokan/sql/" + "oiyokan-test-db-PostgreSQL.sql");
             for (String sql : sqls) {
                 if (sql.trim().length() == 0) {
                     continue;
@@ -89,5 +85,5 @@ class Build34ORCL18Test {
     }
 
     ////////////////////////////////////////////////////
-    // Sakila DB については 見実装。
+    // Sakila DB については Postgres のものを利用。
 }
