@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite.db.build;
+package jp.oiyokan.unittest.db.build;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -29,14 +29,14 @@ import jp.oiyokan.dto.OiyoSettingsDatabase;
 /**
  * テスト用の内部データベースを作成します。この内部データベースは動作の上で必要です。
  */
-class Build32MySQLTest {
+class Build34ORCL18Test {
     private static final boolean IS_RUN_THISMETHOD = false;
 
     private static final String[] DROP_TABLE_SQLS = new String[] { //
             "DROP TABLE ODataTest1", //
             "DROP TABLE ODataTest2", //
             "DROP TABLE ODataTest3", //
-            "DROP TABLE `OData Test4`", //
+            "DROP TABLE \"OData Test4\"", //
             "DROP TABLE ODataTest5", //
             "DROP TABLE ODataTest6", //
             "DROP TABLE ODataTest7", //
@@ -54,7 +54,7 @@ class Build32MySQLTest {
         final OiyoInfo oiyoInfo = new OiyoInfo();
         oiyoInfo.setSettings(OiyoInfoUtil.loadOiyokanSettings(oiyoInfo));
 
-        OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, "mysql1");
+        OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, "oracle1");
 
         try (Connection connTargetDb = OiyoCommonJdbcUtil.getConnection(settingsDatabase)) {
             for (String sql : DROP_TABLE_SQLS) {
@@ -65,8 +65,14 @@ class Build32MySQLTest {
                 }
             }
 
+            try (var stmt = connTargetDb.prepareStatement("DROP TABLE ODataTest1")) {
+                stmt.executeUpdate();
+            } catch (SQLException ex) {
+                System.err.println(ex.toString());
+            }
+
             String[] sqls = OiyokanResourceSqlUtil
-                    .loadOiyokanResourceSql("/oiyokan/sql/" + "oiyokan-test-db-MySQL.sql");
+                    .loadOiyokanResourceSql("/oiyokan/sql/" + "oiyokan-test-db-ORCL18.sql");
             for (String sql : sqls) {
                 if (sql.trim().length() == 0) {
                     continue;
@@ -83,5 +89,5 @@ class Build32MySQLTest {
     }
 
     ////////////////////////////////////////////////////
-    // Sakila DB については MySQL 公式のものを利用。
+    // Sakila DB については 見実装。
 }

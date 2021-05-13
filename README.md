@@ -1,6 +1,6 @@
-# Oiyokan DemoSite
+# Oiyokan UnitTest
 
-This is a demo site for Oiyokan.
+This is a unit test for Oiyokan.
 
 Oiyokan is an OData v4 server (provider) SDK for RDB.
 You can use Oiyokan to turn RDBMS into OData v4 services.
@@ -47,6 +47,7 @@ Getting Started with the Oiyokan can be viewed at the following URL  (written in
 
 - [Oiyokan Library - github](https://github.com/igapyon/oiyokan)
 - [Oiyokan Initializr - github](https://github.com/igapyon/oiyokan-initializr)
+- [Oiyokan UnitTest - github](https://github.com/igapyon/oiyokan-unittest)
 - [Oiyokan Demosite - github](https://github.com/igapyon/oiyokan-demosite)
 - [Oiyokan Demosite-Test - github](https://github.com/igapyon/oiyokan-demosite-test)
 
