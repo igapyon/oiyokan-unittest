@@ -1,7 +1,14 @@
-# Internal (2021-05-13)
+# Release 1.15 (2021-05-19)
+
+## EN
+
+- In the case of SQLSV2008 and ORCL18, suppress `= true` from output when expr eq true is given.
+- Separated regarding prepareStatement lines into OiyoCommonJdbcBindParamUtil.java.
 
 ## JA
 
+- SQLSV2008 と ORCL18 の場合には、expr eq true が与えられた時にこれはSQLに出力されないよう抑止
+- PreparedStatement へのバインドの処理について OiyoCommonJdbcBindParamUtil.java に処理内容を分離
 - いままで Demosite には デモサイトと UnitTest目的と2目的を満たしていたが、混乱するのでこれを分離。
 - これからは UnitTest は単体テストとしての用途に限定する。
 
