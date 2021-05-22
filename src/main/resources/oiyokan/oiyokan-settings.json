@@ -10,7 +10,8 @@
       "jdbcUrl": "jdbc:h2:file:./src/main/resources/db/oiyokan-internal;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=FALSE;MODE=MSSQLServer",
       "jdbcUser": "sa",
       "jdbcPassPlain": "",
-      "transactionIsolation": "Connection.TRANSACTION_READ_COMMITTED"
+      "transactionIsolation": "Connection.TRANSACTION_READ_COMMITTED",
+      "initSqlExec": "SHOW COLUMNS FROM ODataTest6"
     },
     {
       "name": "postgres1",
