@@ -49,7 +49,7 @@ class UnitTestTypeTimeOfDay01Test {
                         + "  \"TimeOfDay1\": \"" + dateStringInput + "\"\n" //
                         + "}");
         String result = OiyokanTestUtil.stream2String(resp.getContent());
-        log.info(result);
+        // log.info(result);
         final String idString = OiyokanTestUtil.getValueFromResultByKey(result, "ID");
         assertEquals(201, resp.getStatusCode(), "TimeOfDay型を INSERTできることを確認.");
 
