@@ -32,7 +32,7 @@ class UnitTestTypeUuid01Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final int TEST_ID = OiyokanTestUtil.getNextUniqueId();
 

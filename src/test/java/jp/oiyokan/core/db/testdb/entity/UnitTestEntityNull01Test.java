@@ -35,7 +35,7 @@ class UnitTestEntityNull01Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         // INSERT + DELETE
         // 自動項目の ID もNULLで引き渡す。

@@ -40,7 +40,7 @@ class UnitTestTypeDate01Test {
     @Test
     void test03() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final String dateStringInput = "2021-01-01";
 

@@ -31,7 +31,7 @@ class UnitTestQuery02Test {
     @Test
     void testDate() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 "$select=ID &$filter=Date1 lt 2021-01-01 and Date1 gt 2021-01-01 &$orderby=ID &$top=51");

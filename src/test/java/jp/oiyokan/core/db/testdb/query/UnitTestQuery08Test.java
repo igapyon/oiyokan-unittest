@@ -31,7 +31,7 @@ class UnitTestQuery08Test {
     @Test
     void testSbyte1() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 "$select=ID &$filter=Sbyte1 eq 127 &$orderby=ID &$top=1");

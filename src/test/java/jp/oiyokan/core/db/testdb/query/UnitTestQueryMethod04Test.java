@@ -32,7 +32,7 @@ class UnitTestQueryMethod04Test {
     @Test
     void testIndexOfA() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         // indexof は 0 ベース.
         final ODataResponse resp = OiyokanTestUtil.callGet( //

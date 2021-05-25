@@ -31,7 +31,7 @@ class UnitTestQueryOrderby03Test {
     @Test
     void testSimpleFilter() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 "$top=2&$filter=ID%20eq%205.0&$count=true&$select=ID,Name");

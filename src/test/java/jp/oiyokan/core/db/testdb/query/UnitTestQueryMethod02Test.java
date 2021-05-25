@@ -33,7 +33,7 @@ class UnitTestQueryMethod02Test {
     @Test
     void testEndsWithA() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 OiyoUrlUtil.encodeUrlQuery("&$filter=endswith(StringVar255, 'VWXYZ') &$count=true &$select=ID"));

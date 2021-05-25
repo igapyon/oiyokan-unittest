@@ -22,7 +22,6 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
 import jp.oiyokan.OiyokanConstants;
-import jp.oiyokan.unittest.OiyokanOdata4Register;
 
 /**
  * Olingoとして一番上位に該当する OiyokanOdata4Register からの動作確認。

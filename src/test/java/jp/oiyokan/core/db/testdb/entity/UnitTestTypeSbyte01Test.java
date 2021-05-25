@@ -33,7 +33,7 @@ class UnitTestTypeSbyte01Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         // SQL Server では 正の値の TINYINT型を利用している。
         ODataResponse resp = OiyokanTestUtil.callPost("/ODataTest1", "{\n" //

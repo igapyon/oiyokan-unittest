@@ -32,7 +32,7 @@ class UnitTestQuery10Test {
     @Test
     void testDouble1() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1", OiyoUrlUtil
                 .encodeUrlQuery("$select=ID &$filter=Double1 lt 123.456789 &$orderby=ID &$count=true &$top=51"));

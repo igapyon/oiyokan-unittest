@@ -31,7 +31,7 @@ class UnitTestValueSpace02Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final int TEST_ID = 50200 + OiyokanTestUtil.getNextUniqueId();
 

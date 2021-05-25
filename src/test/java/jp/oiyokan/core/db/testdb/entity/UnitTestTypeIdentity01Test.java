@@ -31,7 +31,7 @@ class UnitTestTypeIdentity01Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         ODataResponse resp = OiyokanTestUtil.callPost("/ODataTest5", "{\n" //
                 + "  \"Name\":\"Name\"\n" //
