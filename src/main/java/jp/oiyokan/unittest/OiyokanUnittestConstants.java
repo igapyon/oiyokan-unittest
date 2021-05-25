@@ -19,5 +19,5 @@ package jp.oiyokan.unittest;
  * Oiyokan UnitTest の定数.
  */
 public class OiyokanUnittestConstants {
-    public static final String VERSION = "1.16.20210524a";
+    public static final String VERSION = "1.17.20210525a";
 }
