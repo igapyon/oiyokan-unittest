@@ -36,7 +36,7 @@ class UnitTestTypeChar05Test {
     @Test
     void test04() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         // 全項目をデフォルト値でセット。
         // StringChar8 だけは null にセット.

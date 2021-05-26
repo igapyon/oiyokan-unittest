@@ -34,7 +34,7 @@ import jp.oiyokan.util.OiyokanTestUtil;
 class UnitTestQuery14Test {
     @Test
     void testClob1a() throws Exception {
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         OiyoSettingsDatabase database = OiyoInfoUtil.getOiyoDatabaseByEntitySetName(oiyoInfo, "ODataTest1");
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());

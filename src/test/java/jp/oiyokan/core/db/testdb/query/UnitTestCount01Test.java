@@ -34,7 +34,7 @@ class UnitTestCount01Test {
     @Test
     void test() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         log.info(getCount("ODataTest1"));
         log.info(getCount("ODataTest2"));

@@ -33,7 +33,7 @@ class UnitTestTypeChar04Test {
     @Test
     void test04() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final String decVal = "1404";
 

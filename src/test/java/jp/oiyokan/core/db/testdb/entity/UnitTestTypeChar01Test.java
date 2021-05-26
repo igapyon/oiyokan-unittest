@@ -31,7 +31,7 @@ class UnitTestTypeChar01Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         // 左右の文字が正しいことを確認
         ODataResponse resp = OiyokanTestUtil.callPost("/ODataTest3", //
@@ -54,7 +54,7 @@ class UnitTestTypeChar01Test {
         resp = OiyokanTestUtil.callGet("/ODataTest3", "$filter=ID eq " + idString + "&$select=StringChar8");
         result = OiyokanTestUtil.stream2String(resp.getContent());
         assertEquals(
-                "{\"@odata.context\":\"$metadata#ODataTest3\",\"value\":[{\"@odata.id\":\"ODataTest3(" + idString
+                "{\"@odata.context\":\"$metadata#ODataTest3\",\"value\":[{\"@odata.id\":\"http://localhost:8080/odata4.svc/ODataTest3(" + idString
                         + ")\",\"ID\":" + idString + ",\"StringChar8\":\"  C456  \"}]}",
                 result, "前後空白付きでFILTER検索できることを確認.");
         assertEquals(200, resp.getStatusCode());

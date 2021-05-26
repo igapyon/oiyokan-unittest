@@ -33,7 +33,7 @@ class UnitTestQueryMethod05Test {
     @Test
     void testLengthA() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 OiyoUrlUtil.encodeUrlQuery("&$filter=length(StringVar255) eq 26 &$count=true &$select=ID"));

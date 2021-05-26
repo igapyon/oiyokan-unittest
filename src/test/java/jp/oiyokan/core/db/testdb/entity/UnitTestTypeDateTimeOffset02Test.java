@@ -37,7 +37,7 @@ class UnitTestTypeDateTimeOffset02Test {
     @Test
     void test03() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final String dateStringInput = "2020-12-31T21:53:00.000+09:00";
 

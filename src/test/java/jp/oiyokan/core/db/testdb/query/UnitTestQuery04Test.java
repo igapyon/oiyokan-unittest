@@ -31,7 +31,7 @@ class UnitTestQuery04Test {
     @Test
     void testInt16a() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 "$select=ID &$filter=Int16a eq 32767 &$orderby=ID &$top=1");

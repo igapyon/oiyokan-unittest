@@ -35,7 +35,7 @@ class UnitTestEntityBasic01Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         // INSERT + DELETE
         ODataResponse resp = OiyokanTestUtil.callPost("/ODataTest3", "{\n" //

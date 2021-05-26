@@ -31,7 +31,7 @@ class UnitTestQueryOrderby02Test {
     @Test
     void testSimpleAllWithoutSelect() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1", "$orderby=ID&$top=2");
         @SuppressWarnings("unused")

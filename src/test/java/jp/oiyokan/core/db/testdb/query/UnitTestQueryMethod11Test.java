@@ -33,7 +33,7 @@ class UnitTestQueryMethod11Test {
     @Test
     void testSubstringofA() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 OiyoUrlUtil.encodeUrlQuery("&$filter=substringof(StringVar255, 'EFG') &$count=true &$select=ID"));

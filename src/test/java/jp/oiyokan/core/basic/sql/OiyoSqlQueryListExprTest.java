@@ -51,10 +51,10 @@ class OiyoSqlQueryListExprTest {
      * @throws Exception 例外が発生した場合.
      */
     private String getExprString(String rawODataPath, String rawQueryPath) throws Exception {
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         OData odata = OData.newInstance();
-        ServiceMetadata edm = odata.createServiceMetadata(new OiyokanEdmProvider(), new ArrayList<>());
+        ServiceMetadata edm = odata.createServiceMetadata(new OiyokanEdmProvider(oiyoInfo), new ArrayList<>());
 
         // アプリ情報が入っている内部DBをベースに処理。つまり h2 database 前提としての振る舞いをおこなう。
         OiyoSettingsEntitySet entitySet = OiyoInfoUtil.getOiyoEntitySet(oiyoInfo, "ODataTest1");
@@ -90,7 +90,7 @@ class OiyoSqlQueryListExprTest {
 
     @Test
     void test03() throws Exception {
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
         OiyoSettingsDatabase database = OiyoInfoUtil.getOiyoDatabaseByEntitySetName(oiyoInfo, "ODataTest1");
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
 

@@ -51,7 +51,7 @@ class Gen11OiyokanSettingsJsonTest {
 
     @Test
     void test01() throws Exception {
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         OiyoSettingsDatabase settingsDatabase = OiyoInfoUtil.getOiyoDatabaseByName(oiyoInfo, TARGET_UNITTEST_DATABASE);
         System.err.println("確認対象データベース: " + settingsDatabase.getName());

@@ -32,7 +32,7 @@ class UnitTestQueryMethod03Test {
     @Test
     void testContainsA() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 OiyoUrlUtil.encodeUrlQuery("&$filter=contains(StringVar255, 'HIJK') &$count=true &$select=ID"));
