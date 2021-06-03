@@ -78,6 +78,7 @@ class UnitTestEntityNull01Test {
                     result);
             break;
         case MySQL:
+        case ORCL18:
             assertEquals(
                     "{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"@odata.id\":\"http://localhost:8080/odata4.svc/ODataTest1("
                             + idString + ")\",\"ID\":" + idString
