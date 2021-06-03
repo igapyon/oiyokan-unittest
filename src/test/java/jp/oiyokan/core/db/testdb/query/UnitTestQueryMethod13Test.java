@@ -37,11 +37,11 @@ class UnitTestQueryMethod13Test {
         final ODataResponse resp = OiyokanTestUtil.callGet( //
                 "/ODataTest1", //
                 OiyoUrlUtil.encodeUrlQuery(
-                        "&$filter=startswith(StringVar255, 'ABCDEFG') eq false &$count=true &$select=ID &$top=1"));
+                        "&$filter=startswith(StringVar255, 'ABCDEFG') eq false &$select=ID &$top=1"));
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
         // System.err.println("result: " + result);
-        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"@odata.count\":203,\"value\":[{\"ID\":1}]}",
+        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1}]}",
                 result);
         assertEquals(200, resp.getStatusCode());
     }
