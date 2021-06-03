@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite.db.sakila;
+package jp.oiyokan.unittest.db.sakila;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -38,7 +38,7 @@ class SakilaActualFailCaseTest {
         if (!OiyokanTestSettingConstants.IS_TEST_SAKILA)
             return;
 
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
         OiyoSettingsDatabase database = OiyoInfoUtil.getOiyoDatabaseByEntitySetName(oiyoInfo, "ODataTest1");
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
 

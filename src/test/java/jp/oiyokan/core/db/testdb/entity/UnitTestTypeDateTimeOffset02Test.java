@@ -37,7 +37,7 @@ class UnitTestTypeDateTimeOffset02Test {
     @Test
     void test03() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final String dateStringInput = "2020-12-31T21:53:00.000+09:00";
 
@@ -46,7 +46,7 @@ class UnitTestTypeDateTimeOffset02Test {
                         + "  \"DateTimeOffset1\": \"" + dateStringInput + "\"\n" //
                         + "}");
         String result = OiyokanTestUtil.stream2String(resp.getContent());
-        log.info(result);
+        // log.info(result);
         final String idString = OiyokanTestUtil.getValueFromResultByKey(result, "ID");
         assertEquals(201, resp.getStatusCode(), "DateTimeOffset型を INSERTできることを確認.");
 

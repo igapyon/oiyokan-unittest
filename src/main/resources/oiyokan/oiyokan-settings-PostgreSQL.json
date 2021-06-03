@@ -9,7 +9,8 @@
       "jdbcDriver": "org.h2.Driver",
       "jdbcUrl": "jdbc:h2:file:./src/main/resources/db/oiyokan-internal;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=FALSE;MODE=MSSQLServer",
       "jdbcUser": "sa",
-      "jdbcPassPlain": ""
+      "jdbcPassPlain": "",
+      "transactionIsolation": "Connection.TRANSACTION_READ_COMMITTED"
     },
     {
       "name": "postgres1",
@@ -18,7 +19,8 @@
       "jdbcDriver": "org.postgresql.Driver",
       "jdbcUrl": "jdbc:postgresql://localhost:5432/dvdrental",
       "jdbcUser": "",
-      "jdbcPassPlain": ""
+      "jdbcPassPlain": "",
+      "transactionIsolation": "Connection.TRANSACTION_READ_COMMITTED"
     }
   ],
   "entitySet": [

@@ -34,7 +34,7 @@ import jp.oiyokan.util.OiyokanTestUtil;
 class UnitTestQuery14Test {
     @Test
     void testClob1a() throws Exception {
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         OiyoSettingsDatabase database = OiyoInfoUtil.getOiyoDatabaseByEntitySetName(oiyoInfo, "ODataTest1");
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
@@ -53,8 +53,7 @@ class UnitTestQuery14Test {
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
         // System.err.println("result: " + result);
-        assertEquals(
-                "{\"@odata.context\":\"$metadata#ODataTest1\",\"@odata.count\":1,\"value\":[{\"ID\":204,\"Clob1\":\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"}]}",
+        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"@odata.count\":1,\"value\":[{\"ID\":204}]}",
                 result, "検索できることの確認.");
         assertEquals(200, resp.getStatusCode());
     }

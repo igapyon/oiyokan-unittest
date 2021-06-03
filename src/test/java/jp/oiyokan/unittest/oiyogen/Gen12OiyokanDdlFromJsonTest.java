@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite.oiyogen;
+package jp.oiyokan.unittest.oiyogen;
 
 import java.io.File;
 import java.io.StringReader;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -34,13 +32,11 @@ import jp.oiyokan.oiyogen.OiyokanSettingsGenUtil;
 /**
  * 内部データベース用のCSDL用内部テーブルのDDLをコマンドライン生成.
  */
-class Gen02OiyokanUnittestDdlFromJsonTest {
-    private static final Log log = LogFactory.getLog(Gen02OiyokanUnittestDdlFromJsonTest.class);
-
+class Gen12OiyokanDdlFromJsonTest {
     @Test
     void test01() throws Exception {
         new File("./target/").mkdirs();
-        final File existJsonFile = new File("./target/generated-oiyokan/auto-generated-oiyokan-unittest-settings.json");
+        final File existJsonFile = new File("./target/generated-oiyokan/auto-generated-oiyokan-settings.json");
         if (!existJsonFile.exists()) {
             return;
         }
@@ -64,10 +60,11 @@ class Gen02OiyokanUnittestDdlFromJsonTest {
             OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
 
             OiyokanSettingsGenUtil.generateDdl(databaseType, entitySet, sql);
+
         }
 
-        final File generateFile = new File("./target/generated-oiyokan/auto-generated-oiyokan-unittest-ddl.sql");
+        final File generateFile = new File("./target/generated-oiyokan/auto-generated-oiyokan-ddl.sql");
         FileUtils.writeStringToFile(generateFile, sql.toString(), "UTF-8");
-        log.info("sample oiyokan create ddl file generated: " + generateFile.getCanonicalPath());
+        System.err.println("sample oiyokan create ddl file generated: " + generateFile.getCanonicalPath());
     }
 }

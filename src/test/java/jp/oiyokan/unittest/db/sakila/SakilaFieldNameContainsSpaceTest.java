@@ -13,35 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.core.db.testdb.query;
+package jp.oiyokan.unittest.db.sakila;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.apache.olingo.server.api.ODataResponse;
 import org.junit.jupiter.api.Test;
 
-import jp.oiyokan.OiyokanUnittestUtil;
-import jp.oiyokan.common.OiyoInfo;
+import jp.oiyokan.OiyokanTestSettingConstants;
 import jp.oiyokan.common.OiyoUrlUtil;
 import jp.oiyokan.util.OiyokanTestUtil;
 
 /**
- * EQ: 右辺が Member、左辺が null.
+ * OData サーバについて、おおざっぱな通過によるデグレードを検知.
  */
-class UnitTestQueryBinaryEq03Test {
-    // SUBSTRING
+class SakilaFieldNameContainsSpaceTest {
+    /**
+     * zip code 対応
+     */
     @Test
-    void test01() throws Exception {
-        @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
+    void test02() throws Exception {
+        if (!OiyokanTestSettingConstants.IS_TEST_SAKILA)
+            return;
 
         final ODataResponse resp = OiyokanTestUtil.callGet( //
-                "/ODataTest1", //
-                OiyoUrlUtil.encodeUrlQuery(
-                        "&$filter=null eq StringVar255 &$top=3 &$count=true &$select=ID &$orderby=ID asc"));
+                "/SklStaffLists", OiyoUrlUtil.encodeUrlQuery( //
+                        "$count=true &$top=20 &$select=zip_code &$orderby=zip_code &$filter=zip_code eq '00000'"));
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
-        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"@odata.count\":0,\"value\":[]}", result);
+        // System.err.println("dec: " + OiyokanTestUtil.decodeUrlQuery(
+        // "$count=true&$top=20&$select=zip_code&$orderby=zip_code&$filter=zip_code%20eq%20%2700000%27"));
+
+        // System.err.println("result: " + result);
+        assertEquals("{\"@odata.context\":\"$metadata#SklStaffLists\",\"@odata.count\":0,\"value\":[]}", result,
+                "DB上で空白を含む項目名を処理できることの確認。");
         assertEquals(200, resp.getStatusCode());
     }
 }

@@ -33,7 +33,7 @@ import jp.oiyokan.util.OiyokanTestUtil;
 class UnitTestQuery03Test {
     @Test
     void testBoolean() throws Exception {
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
         OiyoSettingsDatabase database = OiyoInfoUtil.getOiyoDatabaseByEntitySetName(oiyoInfo, "ODataTest1");
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
 
@@ -43,8 +43,7 @@ class UnitTestQuery03Test {
 
         switch (databaseType) {
         default:
-            assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1,\"Boolean1\":false}]}",
-                    result);
+            assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1}]}", result);
             assertEquals(200, resp.getStatusCode());
             break;
         case ORCL18:

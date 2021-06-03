@@ -34,7 +34,7 @@ class UnitTestCount01Test {
     @Test
     void test() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         log.info(getCount("ODataTest1"));
         log.info(getCount("ODataTest2"));
@@ -48,8 +48,9 @@ class UnitTestCount01Test {
         log.info(getCount("ODataTest8SubSub"));
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest2", OiyoUrlUtil.encodeUrlQuery("$count=true"));
+        @SuppressWarnings("unused")
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
-        log.info(result);
+        // log.info(result);
     }
 
     static String getCount(String entitySetName) throws Exception {

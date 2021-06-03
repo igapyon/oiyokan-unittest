@@ -33,15 +33,14 @@ class UnitTestQueryBinaryEq02Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet( //
                 "/ODataTest1", //
                 OiyoUrlUtil.encodeUrlQuery("&$filter=32767 eq Int16a &$top=3 &$select=ID &$orderby=ID asc"));
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
-        assertEquals(
-                "{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1,\"Int16a\":32767},{\"ID\":2,\"Int16a\":32767},{\"ID\":3,\"Int16a\":32767}]}",
+        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1},{\"ID\":2},{\"ID\":3}]}",
                 result);
         assertEquals(200, resp.getStatusCode());
     }

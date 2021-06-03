@@ -35,7 +35,7 @@ class UnitTestQuery09Test {
     @Test
     void testSingle1() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
         OiyoSettingsDatabase database = OiyoInfoUtil.getOiyoDatabaseByEntitySetName(oiyoInfo, "ODataTest1");
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
 
@@ -45,8 +45,7 @@ class UnitTestQuery09Test {
 
         switch (databaseType) {
         default:
-            assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1,\"Single1\":123.45}]}",
-                    result, "Single型の確認");
+            assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1}]}", result, "Single型の確認");
             assertEquals(200, resp.getStatusCode());
             break;
         case PostgreSQL:

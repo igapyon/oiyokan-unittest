@@ -34,7 +34,7 @@ class UnitTestEntityPatchInsert02Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final int NOT_EXISTS_ID = OiyokanTestUtil.getNextUniqueId() + 999;
 

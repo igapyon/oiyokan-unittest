@@ -33,7 +33,7 @@ class UnitTestTypeBinary01Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         ODataResponse resp = OiyokanTestUtil.callPost("/ODataTest6", "{\n" //
                 + "  \"Binary1\":\"VG9uYXJpIG5vIGt5YWt1Lg==\"\n" //

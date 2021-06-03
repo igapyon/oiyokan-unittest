@@ -32,15 +32,14 @@ class UnitTestQuery13Test {
     @Test
     void testStringLongVar1a() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1", OiyoUrlUtil
                 .encodeUrlQuery("$select=ID &$filter=StringLongVar1 eq 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' &$count=true"));
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
         // System.err.println("result: " + result);
-        assertEquals(
-                "{\"@odata.context\":\"$metadata#ODataTest1\",\"@odata.count\":1,\"value\":[{\"ID\":204,\"StringLongVar1\":\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"}]}",
+        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"@odata.count\":1,\"value\":[{\"ID\":204}]}",
                 result);
         assertEquals(200, resp.getStatusCode());
     }

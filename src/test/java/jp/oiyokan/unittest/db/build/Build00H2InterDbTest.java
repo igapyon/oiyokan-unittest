@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite.db.build;
+package jp.oiyokan.unittest.db.build;
 
 import java.io.File;
 import java.sql.Connection;

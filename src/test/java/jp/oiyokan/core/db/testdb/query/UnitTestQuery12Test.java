@@ -34,7 +34,7 @@ import jp.oiyokan.util.OiyokanTestUtil;
 class UnitTestQuery12Test {
     @Test
     void testStringVar255WithAndOr() throws Exception {
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         OiyoSettingsDatabase database = OiyoInfoUtil.getOiyoDatabaseByEntitySetName(oiyoInfo, "ODataTest1");
         OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
@@ -53,8 +53,7 @@ class UnitTestQuery12Test {
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
         // System.err.println("result: " + result);
-        assertEquals(
-                "{\"@odata.context\":\"$metadata#ODataTest1\",\"@odata.count\":1,\"value\":[{\"ID\":204,\"StringVar255\":\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"StringLongVar1\":\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"Clob1\":\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"}]}",
+        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"@odata.count\":1,\"value\":[{\"ID\":204}]}",
                 result, "検索できることの確認.");
         assertEquals(200, resp.getStatusCode());
     }

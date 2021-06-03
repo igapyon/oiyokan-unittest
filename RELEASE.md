@@ -1,3 +1,72 @@
+# Release 1.19 (2021-06-03)
+
+## EN
+
+- Entity UPDATE: If the update item of UPDATE contains a KEY, skip it.
+- Fixed a bug that wasNull was missing in getting search results. When a numeric item was null, it would erroneously return 0.
+
+## JA
+
+- Entity UPDATE: UPDATEの更新項目にKEYが含まれていたらそれは処理対象外としてスキップ。
+- 検索結果取得に wasNull判定が抜けていたのを訂正。数値項目で null の場合に誤って 0 が戻っていたバグの訂正。
+
+# Release 1.18 (2021-05-26)
+
+## EN
+
+- Implementation: Changed to pass OiyoInfo instance from the outside.
+- Changed to return URI with FQN.
+- Added messages regarding autoCommit, jdbcFetchSize, filterEqAutoSelect.
+- Added log.trace where EntityCollection is expected to take a time.
+
+## JA
+
+- 実装: OiyoInfo インスタンスを外側から引き渡すよう変更
+- URIをFQNで戻すよう変更
+- autoCommit, jdbcFetchSize, filterEqAutoSelect のメッセージを追加
+- EntityCollection で時間がかかると予見される箇所に log.trace を追加
+
+# Release 1.17 (2021-05-25)
+
+## EN
+
+- Some JSON params are added to `oiyokan-settings.json`: autoCommit, jdbcFetchSize, filterEqAutoSelect.
+- Added ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY to collection Statement.
+- Use java.sql.Statement for parameterless queries.
+
+## JA
+
+- `oiyokan-settings.json` にいくつかの JSON パラメータを追加: autoCommit, jdbcFetchSize, filterEqAutoSelect。
+- 一覧取得Statementに ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY 指定を追加。
+- パラメータなしクエリは java.sql.Statement を利用。
+- 上記: 各DBで確認済み。
+
+# Release 1.16 (2021-05-22)
+
+## EN
+
+- Added field named transactionIsolation to JSON to configure isolation level like Connection.setTransactionIsolation.
+- Added field named initSqlExec to JSON to specify the initialization SQL statement at the time of DB connection (experimental).
+
+## JA
+
+- transactionIsolation という名前の項目を JSON に追加して Connection.setTransactionIsolation などを指定できるように変更。
+- initSqlExec という名前の項目を JSON に追加して DB接続時の初期化SQL文を指定できるようにする (experimental)。
+
+# Release 1.15 (2021-05-19)
+
+## EN
+
+- In the case of SQLSV2008 and ORCL18, suppress `= true` from output when expr eq true is given.
+- Separated regarding prepareStatement lines into OiyoCommonJdbcBindParamUtil.java.
+
+## JA
+
+- SQLSV2008 と ORCL18 の場合には、expr eq true が与えられた時にこれはSQLに出力されないよう抑止
+- PreparedStatement へのバインドの処理について OiyoCommonJdbcBindParamUtil.java に処理内容を分離
+- いままで Demosite には デモサイトと UnitTest目的と2目的を満たしていたが、混乱するのでこれを分離。
+- これからは UnitTest は単体テストとしての用途に限定する。
+
 # Release 1.14 (2021-05-10)
 
 ## EN

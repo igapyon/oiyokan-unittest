@@ -31,14 +31,14 @@ class UnitTestQuery08Test {
     @Test
     void testSbyte1() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 "$select=ID &$filter=Sbyte1 eq 127 &$orderby=ID &$top=1");
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
         // System.err.println("result: " + result);
-        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1,\"Sbyte1\":127}]}", result);
+        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1}]}", result);
         assertEquals(200, resp.getStatusCode());
     }
 }

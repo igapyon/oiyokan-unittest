@@ -31,16 +31,14 @@ class UnitTestQuery07Test {
     @Test
     void testIntBigDecimal() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 "$select=ID &$filter=Decimal1 eq 1234.56 &$orderby=ID &$top=2 &$skip=2");
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
         // System.err.println("result: " + result);
-        assertEquals(
-                "{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":3,\"Decimal1\":1234.56},{\"ID\":4,\"Decimal1\":1234.56}]}",
-                result);
+        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":3},{\"ID\":4}]}", result);
         assertEquals(200, resp.getStatusCode());
     }
 }

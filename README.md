@@ -1,6 +1,6 @@
-# Oiyokan DemoSite
+# Oiyokan UnitTest
 
-This is a demo site for Oiyokan.
+This is a unit test for Oiyokan.
 
 Oiyokan is an OData v4 server (provider) SDK for RDB.
 You can use Oiyokan to turn RDBMS into OData v4 services.
@@ -8,6 +8,12 @@ You can use Oiyokan to turn RDBMS into OData v4 services.
 - Based on Apache Olingo. Build with Spring Boot, Java, h2.
 - Oiyokan uses JDBC to provide OData v4 access to the RDB.
 - Source code at github, license : Apache License.
+
+## Getting Started with the Oiyokan
+
+Getting Started with the Oiyokan can be viewed at the following URL  (written in Japanese).
+
+- http://www.igapyon.jp/igapyon/diary/2021/ig210511.html
 
 ## Supported target RDBMS
 
@@ -32,6 +38,18 @@ You can use Oiyokan to turn RDBMS into OData v4 services.
 - $orderby
 - $top
 - $skip
+
+## Oiyokan in Maven repository
+
+- [Maven Repository - Oiyokan](https://mvnrepository.com/artifact/jp.igapyon.oiyokan)
+
+## Oiyokan 関連リポジトリ 
+
+- [Oiyokan Library - github](https://github.com/igapyon/oiyokan)
+- [Oiyokan Initializr - github](https://github.com/igapyon/oiyokan-initializr)
+- [Oiyokan UnitTest - github](https://github.com/igapyon/oiyokan-unittest)
+- [Oiyokan Demosite - github](https://github.com/igapyon/oiyokan-demosite)
+- [Oiyokan Demosite-Test - github](https://github.com/igapyon/oiyokan-demosite-test)
 
 ## Sample implementation using Oiyokan
 
@@ -71,12 +89,6 @@ src/main/resources/oiyokan/oiyokan-settings.json
 Spring Boot を再起動することにより設定情報の更新を反映。
 
 # Oiyokan 関連情報
-
-## Oiyokan 関連リポジトリ 
-
-- [Oiyokan 本体ライブラリ - github](https://github.com/igapyon/oiyokan)
-- [Oiyokan デモサイト - github](https://github.com/igapyon/oiyokan-demosite)
-- [Oiyokan デモサイトのテスト - github](https://github.com/igapyon/oiyokan-demosite-test)
 
 ## OData v4 server のサンプル(simple-odata4) を祖先
 

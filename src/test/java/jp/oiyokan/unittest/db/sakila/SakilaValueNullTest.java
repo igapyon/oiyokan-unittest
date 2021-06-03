@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite.db.sakila;
+package jp.oiyokan.unittest.db.sakila;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -47,7 +47,7 @@ class SakilaValueNullTest {
 
         // 検索結果が存在するべき。
         assertEquals(
-                "{\"@odata.context\":\"$metadata#SklAddresses\",\"@odata.count\":4,\"value\":[{\"address_id\":1,\"address2\":null}]}",
+                "{\"@odata.context\":\"$metadata#SklAddresses\",\"@odata.count\":4,\"value\":[{\"address_id\":1}]}",
                 result, "eq で右辺が null リテラルの処理");
         assertEquals(200, resp.getStatusCode());
     }
@@ -70,7 +70,7 @@ class SakilaValueNullTest {
 
         // 検索結果が存在するべき。
         assertEquals(
-                "{\"@odata.context\":\"$metadata#SklAddresses\",\"@odata.count\":4,\"value\":[{\"address_id\":1,\"address2\":null}]}",
+                "{\"@odata.context\":\"$metadata#SklAddresses\",\"@odata.count\":4,\"value\":[{\"address_id\":1}]}",
                 result, "eq で左辺が null リテラルの処理");
         assertEquals(200, resp.getStatusCode());
     }

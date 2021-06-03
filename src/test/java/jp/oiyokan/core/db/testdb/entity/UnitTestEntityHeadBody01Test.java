@@ -39,7 +39,7 @@ class UnitTestEntityHeadBody01Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         ODataResponse resp = OiyokanTestUtil.callPost("/ODataTest8", "{\n" //
                 + "  \"MainKey\":\"KEY001\"\n" //

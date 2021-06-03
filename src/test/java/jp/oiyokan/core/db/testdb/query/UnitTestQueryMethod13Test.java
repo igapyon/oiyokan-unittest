@@ -13,40 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite.db.sakila;
+package jp.oiyokan.core.db.testdb.query;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.apache.olingo.server.api.ODataResponse;
 import org.junit.jupiter.api.Test;
 
-import jp.oiyokan.OiyokanTestSettingConstants;
+import jp.oiyokan.OiyokanUnittestUtil;
+import jp.oiyokan.common.OiyoInfo;
 import jp.oiyokan.common.OiyoUrlUtil;
 import jp.oiyokan.util.OiyokanTestUtil;
 
 /**
- * OData サーバについて、おおざっぱな通過によるデグレードを検知.
+ * startsWith と eq のコンビネーション。
  */
-class SakilaFieldNameContainsSpaceTest {
-    /**
-     * zip code 対応
-     */
+class UnitTestQueryMethod13Test {
     @Test
-    void test02() throws Exception {
-        if (!OiyokanTestSettingConstants.IS_TEST_SAKILA)
-            return;
+    void testStartsWithA() throws Exception {
+        @SuppressWarnings("unused")
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet( //
-                "/SklStaffLists", OiyoUrlUtil.encodeUrlQuery( //
-                        "$count=true &$top=20 &$select=zip_code &$orderby=zip_code &$filter=zip_code eq '00000'"));
+                "/ODataTest1", //
+                OiyoUrlUtil.encodeUrlQuery(
+                        "&$filter=startswith(StringVar255, 'ABCDEFG') eq false &$select=ID &$top=1"));
         final String result = OiyokanTestUtil.stream2String(resp.getContent());
 
-        // System.err.println("dec: " + OiyokanTestUtil.decodeUrlQuery(
-        // "$count=true&$top=20&$select=zip_code&$orderby=zip_code&$filter=zip_code%20eq%20%2700000%27"));
-
         // System.err.println("result: " + result);
-        assertEquals("{\"@odata.context\":\"$metadata#SklStaffLists\",\"@odata.count\":0,\"value\":[]}", result,
-                "DB上で空白を含む項目名を処理できることの確認。");
+        assertEquals("{\"@odata.context\":\"$metadata#ODataTest1\",\"value\":[{\"ID\":1}]}",
+                result);
         assertEquals(200, resp.getStatusCode());
     }
 }

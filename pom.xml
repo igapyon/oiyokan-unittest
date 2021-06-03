@@ -11,11 +11,11 @@
 	</parent>
 
 	<groupId>jp.igapyon.oiyokan</groupId>
-	<artifactId>oiyokan-demosite</artifactId>
-	<version>1.14.20210510a</version>
-	<name>oiyokan-demosite</name>
-	<description>Oiyokan is a simple OData v4 Server. (based on Apache
-		Olingo / Spring Boot / h2 database)</description>
+	<artifactId>oiyokan-unittest</artifactId>
+	<version>1.19.20210603a</version>
+	<name>oiyokan-unittest</name>
+	<description>UnitTest of Oiyokan. Oiyokan is a simple OData v4 Server. (based on Apache
+		Olingo / h2 database)</description>
 	<url>https://github.com/igapyon/oiyokan</url>
 
 	<!-- see: https://maven.apache.org/guides/mini/guide-central-repository-upload.html -->
@@ -28,9 +28,9 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/igapyon/oiyokan-demosite</url>
-		<connection>scm:git:https://github.com/igapyon/oiyokan-demosite.git</connection>
-		<developerConnection>scm:git:https://github.com/igapyon/oiyokan-demosite.git</developerConnection>
+		<url>https://github.com/igapyon/oiyokan-unittest</url>
+		<connection>scm:git:https://github.com/igapyon/oiyokan-unittest.git</connection>
+		<developerConnection>scm:git:https://github.com/igapyon/oiyokan-unittest.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -86,7 +86,7 @@
 		<dependency>
 			<groupId>jp.igapyon.oiyokan</groupId>
 			<artifactId>oiyokan</artifactId>
-			<version>1.14.20210510a</version>
+			<version>1.19.20210603a</version>
 		</dependency>
 
 		<dependency>

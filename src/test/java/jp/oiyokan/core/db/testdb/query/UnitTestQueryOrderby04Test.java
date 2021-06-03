@@ -39,7 +39,7 @@ class UnitTestQueryOrderby04Test {
     @Test
     void testSimpleSearch() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         if (!OiyokanConstants.IS_EXPERIMENTAL_SEARCH_ENABLED) {
             log.info("[INFO] $search はサポート外: テストスキップします.");

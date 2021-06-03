@@ -32,7 +32,7 @@ class UnitTestQueryNot01Test {
     @Test
     void testNotA() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1", OiyoUrlUtil
                 .encodeUrlQuery("&$filter=not contains(StringVar255,'VARCHAR255') &$count=true &$select=ID"));

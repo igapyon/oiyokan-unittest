@@ -33,7 +33,7 @@ class UnitTestTypeDecimal02Test {
     @Test
     void test01() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         ODataResponse resp = OiyokanTestUtil.callPost("/ODataTest2", "{\n" //
                 + "  \"Decimal1\":8765.43\n" //

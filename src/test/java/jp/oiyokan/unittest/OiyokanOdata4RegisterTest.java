@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.oiyokan.demosite;
+package jp.oiyokan.unittest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

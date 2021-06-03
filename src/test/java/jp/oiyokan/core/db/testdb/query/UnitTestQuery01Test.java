@@ -31,7 +31,7 @@ class UnitTestQuery01Test {
     @Test
     void testTimestamp() throws Exception {
         @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.getUnittestOiyoInfoInstance();
 
         final ODataResponse resp = OiyokanTestUtil.callGet("/ODataTest1",
                 "$select=ID &$filter=DateTimeOffset1 lt 2000-12-31T21:53:00Z &$orderby=ID &$top=51 &$count=true");
