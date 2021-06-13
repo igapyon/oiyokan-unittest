@@ -86,7 +86,7 @@
 		<dependency>
 			<groupId>jp.igapyon.oiyokan</groupId>
 			<artifactId>oiyokan</artifactId>
-			<version>1.19.20210603a</version>
+			<version>1.19.20210613a-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
